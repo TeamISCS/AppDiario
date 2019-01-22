@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HTTP } from '@ionic-native/http';
+import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
 
 @Component({
   selector: 'page-home',
@@ -9,19 +9,13 @@ import { HTTP } from '@ionic-native/http';
 
 export class HomePage {
 
-  //http: HTTP;
-  constructor(public navCtrl: NavController, private http: HTTP) {
 
+  outputFromServer: string
+
+  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
   controlla(): void {
-    console.log("ok")
-    this.http.get('http://localhost:8080/APP_DIARIO/log/isalive', {}, {})
-      .then(data => {
-        console.log("va");
-      })
-      .catch(error => {
-        console.log("non va");
-      });
+    this.api.getURL().subscribe( res => {this.outputFromServer = res['name']; console.log(this.outputFromServer) })
     }
 }

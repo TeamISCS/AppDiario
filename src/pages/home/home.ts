@@ -26,14 +26,22 @@ export class HomePage {
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
+
   controlla(): void {
     this.postData.user = this.user.value
     this.postData.pass = this.pass.value
   
-    console.log(this.api.getURL('getlog', this.postData))
+    console.log(this.api.getURL('signIn', this.postData))
+
+    /*
+    localStorage.setItem("user", this.postData.user)
+    localStorage.setItem("pass", this.postData.pass)
+    console.log(localStorage.getItem("user"))
+    console.log(localStorage.getItem("pass"))
+    */
   }
 
-  register(): void {
-    this.navCtrl.push(RegisterPage)
+  registerPage(): void {
+    this.navCtrl.setRoot(RegisterPage)
   }
 }

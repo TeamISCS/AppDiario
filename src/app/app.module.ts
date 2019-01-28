@@ -1,3 +1,4 @@
+import { RegisterPage } from './../pages/register/register';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -12,7 +13,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

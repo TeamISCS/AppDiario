@@ -1,24 +1,19 @@
-import { RegisterPage } from './../register/register';
 import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
 
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
-
+  selector: 'page-register',
+  templateUrl: 'register.html',
 })
-
-export class HomePage {
+export class RegisterPage {
 
   @ViewChild('user') user: HTMLInputElement
   @ViewChild('pass') pass: HTMLInputElement
 
-  urlApp ="http://localhost:8080/APP_DIARIO/log/getlog"
-
-  outputFromServer: string
   postData = {
-    "id_user": -1,
     "user": "",
     "pass": ""
   }
@@ -26,14 +21,14 @@ export class HomePage {
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
-  controlla(): void {
+  register(){
+
     this.postData.user = this.user.value
     this.postData.pass = this.pass.value
+
+    console.log(this.api.getURL('signUp', this.postData))
+
   
-    console.log(this.api.getURL('getlog', this.postData))
   }
 
-  register(): void {
-    this.navCtrl.push(RegisterPage)
-  }
 }

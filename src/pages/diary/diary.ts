@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the DiaryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,7 +13,7 @@ export class DiaryPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DiaryPage');
+    document.getElementById("aa").innerHTML = "Benvenuto " + localStorage.getItem("user")
   }
 
 }

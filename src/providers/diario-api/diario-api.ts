@@ -21,22 +21,9 @@ export class DiarioApiProvider {
       })
     };
 
-  
-  postServer(postData){
-  
-  }
-
 
   getURL(pathUrl, postData){
 
-    this.http.post((this.urlApp + pathUrl), postData, this.httpOptions)
-      .subscribe(data => {
-        this.dataExit[0] = data;
-      }, error => {
-        console.log("errore")
-      })
-
-    return this.dataExit;
+    return this.http.post((this.urlApp + pathUrl), postData, this.httpOptions) 
   }
-
 }

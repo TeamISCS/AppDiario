@@ -8,13 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { DiarioApiProvider } from '../providers/diario-api/diario-api';
+import { DiaryPage } from '../pages/diary/diary';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    DiaryPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    DiaryPage
   ],
   providers: [
     StatusBar,

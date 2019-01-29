@@ -1,7 +1,7 @@
+import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
 import { RegisterPage } from './../register/register';
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
 
 @Component({
   selector: 'page-home',
@@ -14,9 +14,6 @@ export class HomePage {
   @ViewChild('user') user: HTMLInputElement
   @ViewChild('pass') pass: HTMLInputElement
 
-  urlApp ="http://localhost:8080/APP_DIARIO/log/getlog"
-
-  outputFromServer: string
   postData = {
     "id_user": -1,
     "user": "",
@@ -32,6 +29,7 @@ export class HomePage {
     this.postData.pass = this.pass.value
   
     console.log(this.api.getURL('signIn', this.postData))
+    
 
     /*
     localStorage.setItem("user", this.postData.user)

@@ -1,23 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-/*
-  Generated class for the DiarioApiProvider provider.
+import { HttpHeaders } from '@angular/common/http';
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+
 @Injectable()
+
 export class DiarioApiProvider {
-
-
-  url = "http://localhost:8080/APP_DIARIO/log/isAlive"
+  urlApp ="http://localhost:8080/APP_DIARIO/log/"
+  dataExit = []
 
   constructor(public http: HttpClient) {
-    
+
   }
 
-  getURL(){
-    return this.http.get(this.url);
-  }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type':  'application/json'
+      })
+    };
+
+
+  getURL(pathUrl, postData){
+
+    return this.http.post((this.urlApp + pathUrl), postData, this.httpOptions) 
+  }
 }

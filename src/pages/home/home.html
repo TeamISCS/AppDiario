@@ -1,19 +1,24 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      App Diario
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<html>
+  <head>
 
-<ion-content padding>
-  
+  </head>
 
-  <ion-list>
 
-    <ion-input type="text" placeholder="Username"></ion-input>
-    <ion-input type="password" placeholder="Password"ì></ion-input>
-    <button type="submit" (click)="controlla()" ion-button>Login</button>
+  <body>
 
-  </ion-list>
-</ion-content>
+    <div id="div-title">
+      Login
+    </div>
+
+    <div id="div-contet">
+      <p style="display: none" id="bello"></p>
+      <div class="center">
+        <ion-input type="text" placeholder="Username" #user class="block"></ion-input>
+        <ion-input type="password" placeholder="Password" #pass class="block"></ion-input>
+        <button type="submit" (click)="controlla()" class="block">Login</button>
+        <button type="submit" (click)="registerPage()" class="block">Sign up</button>
+      </div>
+    </div>
+
+  </body>
+</html>

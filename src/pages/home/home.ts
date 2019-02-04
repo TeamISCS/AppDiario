@@ -17,23 +17,23 @@ export class HomePage {
 
   data = {
     "id_user": -1,
-    "user": "",
-    "pass": ""
+    "username": "",
+    "password": ""
   }
 
-  cicci
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
 
   controlla(): void {
-    this.data.user = this.user.value
-    this.data.pass = this.pass.value
+    this.data.username = this.user.value
+    this.data.password = this.pass.value
   
-    this.api.post('new', this.data)
+    this.api.post('login', this.data)
       .subscribe(data => {
-          localStorage.setItem("id", data["id_user"])
-          localStorage.setItem("user", data["user"])
+          localStorage.setItem("id", data["id"])
+          localStorage.setItem("username", data["username"])
+          console.log(data)
           this.navCtrl.setRoot(DiaryPage)
         },
       error => {

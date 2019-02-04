@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable()
 
 export class DiarioApiProvider {
-  urlApp ="http://localhost:8080/diario/api/v1/todo/"
+  urlApp ="http://localhost:8080/diario/api/v1/user/"
   dataExit = []
 
   constructor(public http: HttpClient) {
@@ -23,7 +23,6 @@ export class DiarioApiProvider {
 
 
   post(pathUrl, data){
-
     return this.http.post((this.urlApp + pathUrl), data, this.httpOptions) 
   }
 

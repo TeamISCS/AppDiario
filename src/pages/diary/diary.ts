@@ -13,7 +13,7 @@ export class DiaryPage {
   }
 
   ionViewDidLoad() {
-    document.getElementById("aa").innerHTML = "Benvenuto " + localStorage.getItem("user")
+    document.getElementById("aa").innerHTML = "Benvenuto " + localStorage.getItem("username")
   }
 
 }

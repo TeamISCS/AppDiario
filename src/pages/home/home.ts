@@ -15,7 +15,7 @@ export class HomePage {
   @ViewChild('user') user: HTMLInputElement
   @ViewChild('pass') pass: HTMLInputElement
 
-  postData = {
+  data = {
     "id_user": -1,
     "user": "",
     "pass": ""
@@ -27,12 +27,11 @@ export class HomePage {
 
 
   controlla(): void {
-    this.postData.user = this.user.value
-    this.postData.pass = this.pass.value
+    this.data.user = this.user.value
+    this.data.pass = this.pass.value
   
-    this.api.getURL('getlog', this.postData)
+    this.api.post('new', this.data)
       .subscribe(data => {
-          console.log(data["user"])
           localStorage.setItem("id", data["id_user"])
           localStorage.setItem("user", data["user"])
           this.navCtrl.setRoot(DiaryPage)

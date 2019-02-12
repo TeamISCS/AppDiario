@@ -16,9 +16,9 @@ export class HomePage {
   @ViewChild('pass') pass: HTMLInputElement
 
   data = {
-    "id_user": -1,
-    "username": "",
-    "password": ""
+    "idUtente": -1,
+    "usernameUtente": "",
+    "passwordUtente": ""
   }
 
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
@@ -26,13 +26,13 @@ export class HomePage {
 
 
   controlla(): void {
-    this.data.username = this.user.value
-    this.data.password = this.pass.value
+    this.data.usernameUtente = this.user.value
+    this.data.passwordUtente = this.pass.value
   
     this.api.post('login', this.data)
       .subscribe(data => {
-          localStorage.setItem("id", data["id"])
-          localStorage.setItem("username", data["username"])
+          localStorage.setItem("id", data["idUtente"])
+          localStorage.setItem("username", data["usernameUtente"])
           console.log(data)
           this.navCtrl.setRoot(DiaryPage)
         },

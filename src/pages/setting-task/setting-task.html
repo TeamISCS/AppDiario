@@ -15,4 +15,82 @@
 
 <ion-content padding>
 
+
+  <div id="div-contet">
+    <p style="display: none" id="error"></p>
+
+
+
+      <div>
+          <ion-item>
+             <ion-input type="text" placeholder="Titolo" #titolo class="block"></ion-input>
+          </ion-item>
+      </div>
+
+      <div>
+      <ion-list>
+          <ion-item>
+              <ion-label>Materia</ion-label>
+              <ion-select value="brown" okText="Okay" cancelText="Annulla">
+                  <ion-option value="ita">Italiano</ion-option>
+                  <ion-option value="mate">Matematica</ion-option>
+                  <ion-option value="ing">Inglese</ion-option>
+              </ion-select>
+            </ion-item>
+        </ion-list>
+      </div>
+
+      <div>
+          <ion-list>
+              <ion-item>
+                  <ion-label>Classe</ion-label>
+                  <ion-select value="brown" okText="Okay" cancelText="Annulla">
+                      <ion-option value="1">1</ion-option>
+                      <ion-option value="2">2</ion-option>
+                      <ion-option value="3">3</ion-option>
+                      <ion-option value="4">4</ion-option>
+                      <ion-option value="5">5</ion-option>
+                  </ion-select>
+                </ion-item>
+            </ion-list>
+          </div>
+
+          <div>
+              <ion-list>
+                  <ion-item>
+                      <ion-label>Sezione</ion-label>
+                      <ion-select value="brown" okText="Okay" cancelText="Annulla">
+                          <ion-option value="A">A</ion-option>
+                          <ion-option value="B">B</ion-option>
+                          <ion-option value="C">C</ion-option>
+                          <ion-option value="D">D</ion-option>
+                          <ion-option value="E">E</ion-option>
+                          <ion-option value="F">F</ion-option>
+                      </ion-select>
+                    </ion-item>
+                </ion-list>
+              </div>
+
+
+      <ion-item>
+          <ion-label>Data</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" ></ion-datetime>
+
+           <!--   <ion-label>Periodo</ion-label>
+              <ion-datetime
+                display-format="DDDD MMM D, YYYY"
+                month-names="Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre"
+                month-short-names="Gen, Feb, Mar, Apr, Mag, Giu, Lug, Ago, Set, Ott, Nov, Dic"
+                day-names="domingo, segunda-feira, ter\u00e7a-feira, ..."
+                day-short-names="dom, seg, ter, ...">
+
+              </ion-datetime> -->
+      </ion-item>
+    </div>
+
+ <ion-item>
+    <ion-label>Compito</ion-label>
+    <ion-textarea rows="15" cols="20" placeholder="Scrivi qua il compito"></ion-textarea>
+  </ion-item>
+
 </ion-content>

@@ -1,53 +1,31 @@
-import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
-import { RegisterPage } from './../register/register';
-import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { DiaryPage } from '../diary/diary';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
+  selector: 'page-diary',
   templateUrl: 'home.html',
-
 })
-
 export class HomePage {
 
-  @ViewChild('user') user: HTMLInputElement
-  @ViewChild('pass') pass: HTMLInputElement
-
-  data = {
-    "usernameUtente": "",
-    "passwordUtente": ""
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
+  ionViewDidLoad() {
+    document.getElementById("welcome").innerHTML = 
+      `Benvenuto ${localStorage.getItem('nome')} ${localStorage.getItem('cognome')}`
   }
 
 
-  controlla(): void {
-    this.data.usernameUtente = this.user.value
-    this.data.passwordUtente = this.pass.value
-  
-    this.api.post('login', this.data)
-      .subscribe(data => {
-          localStorage.setItem("id", data["idUtente"])
-          localStorage.setItem("username", data["usernameUtente"])
-          console.log(data)
-          this.navCtrl.setRoot(DiaryPage)
-        },
-      error => {
-        document.getElementById("error").style.display = "block";
-        document.getElementById("error").innerHTML = "Credenziali sbagliate"
-      })
-
-    
+  logout() {
+    localStorage.removeItem("jwt")
+    localStorage.removeItem("mail")
+    localStorage.removeItem("nome")
+    localStorage.removeItem("cognome")
+    localStorage.removeItem("username")
+    this.navCtrl.setRoot(LoginPage)
   }
 
-  registerPage(): void {
-    this.navCtrl.setRoot(RegisterPage)
-  }
-
-  ionViewDidLoad(){
-   console.log(localStorage.getItem('jwt'))
-  }
 }

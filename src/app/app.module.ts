@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

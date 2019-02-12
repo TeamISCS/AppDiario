@@ -13,11 +13,13 @@ export class RegisterPage {
 
   @ViewChild('user') user: HTMLInputElement
   @ViewChild('pass') pass: HTMLInputElement
+  @ViewChild('mail') mail: HTMLInputElement
   @ViewChild('cpass') cpass: HTMLInputElement
 
   data = {
-    "username": "",
-    "password": ""
+    "usernameUtente": "",
+    "passwordUtente": "",
+    "mailUtente": ""
   }
 
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
@@ -42,10 +44,11 @@ export class RegisterPage {
     else{
       document.getElementById("vs").style.display = "none"
 
-      this.data.username = this.user.value
-      this.data.password = this.pass.value
+      this.data.usernameUtente = this.user.value
+      this.data.passwordUtente = this.pass.value
+      this.data.mailUtente = this.mail.value
 
-      this.api.post('newUser', this.data)
+      this.api.post('registrazioneutente', this.data)
       .subscribe(data => {
         console.log(data)
       },

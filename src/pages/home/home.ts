@@ -16,7 +16,6 @@ export class HomePage {
   @ViewChild('pass') pass: HTMLInputElement
 
   data = {
-    "idUtente": -1,
     "usernameUtente": "",
     "passwordUtente": ""
   }
@@ -46,5 +45,9 @@ export class HomePage {
 
   registerPage(): void {
     this.navCtrl.setRoot(RegisterPage)
+  }
+
+  ionViewDidLoad(){
+   console.log(localStorage.getItem('jwt'))
   }
 }

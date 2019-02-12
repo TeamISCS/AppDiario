@@ -51,6 +51,7 @@ export class RegisterPage {
       this.api.post('registrazioneutente', this.data)
       .subscribe(data => {
         console.log(data)
+        localStorage.setItem('jwt', data['jwt'])
       },
       error => {
         console.log("errore")

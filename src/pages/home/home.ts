@@ -37,8 +37,8 @@ export class HomePage {
           this.navCtrl.setRoot(DiaryPage)
         },
       error => {
-        document.getElementById("bello").style.display = "block";
-        document.getElementById("bello").innerHTML = "Credenziali sbagliate"
+        document.getElementById("error").style.display = "block";
+        document.getElementById("error").innerHTML = "Credenziali sbagliate"
       })
 
     

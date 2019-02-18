@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -23,8 +24,9 @@ export class TaskPage {
   }
 
   generaCompito(compito){
-    console.log(compito["idCompito"])
-
+    document.getElementById("titolo").innerHTML=compito["titolo"]
+    document.getElementById("materia").innerHTML=compito["materia"]
+    document.getElementById("descrizione").innerHTML=compito["descrizione"]
   }
 
   getCompito() {
@@ -32,8 +34,12 @@ export class TaskPage {
       "idCompito": "1",
       "titolo": "studia",
       "materia": "storia",
-      "descrizione": "Studiare da pag 20 a pag 50"
+      "descrizione": "Studiare da pag 20 a pag 50 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     })
   }
+
+  tornaindietro():void{
+    this.navCtrl.setRoot(HomePage)
+}
 
 }

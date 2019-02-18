@@ -1,3 +1,4 @@
+import { TaskPage } from './../pages/task/task';
 import { SettingTaskPage } from './../pages/setting-task/setting-task';
 import { LoginPage } from './../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
@@ -18,7 +19,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
     HomePage,
     RegisterPage,
     LoginPage,
-    SettingTaskPage
+    SettingTaskPage,
+    TaskPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
     HomePage,
     RegisterPage,
     LoginPage,
-    SettingTaskPage
+    SettingTaskPage,
+    TaskPage
   ],
   providers: [
     StatusBar,

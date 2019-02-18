@@ -1,3 +1,4 @@
+import { TaskPage } from './../pages/task/task';
 import { SettingTaskPage } from './../pages/setting-task/setting-task';
 import { LoginPage } from './../pages/login/login';
 import { Component } from '@angular/core';
@@ -8,7 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SettingTaskPage;
+  rootPage:any = TaskPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

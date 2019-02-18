@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>setting-task</ion-title>
+    <ion-title>Inserisci compito</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -23,7 +23,8 @@
 
       <div>
           <ion-item>
-             <ion-input type="text" placeholder="Titolo" #titolo class="block"></ion-input>
+              <ion-label>Titolo</ion-label>
+              <ion-input type="text" #titolo class="block"></ion-input>
           </ion-item>
       </div>
 
@@ -35,6 +36,8 @@
                   <ion-option value="ita">Italiano</ion-option>
                   <ion-option value="mate">Matematica</ion-option>
                   <ion-option value="ing">Inglese</ion-option>
+                  <ion-option value="inf">Informatica</ion-option>
+                  <ion-option value="edf">Ed. fisica</ion-option>
               </ion-select>
             </ion-item>
         </ion-list>
@@ -74,7 +77,7 @@
 
       <ion-item>
           <ion-label>Data</ion-label>
-          <ion-datetime displayFormat="DD/MM/YYYY" ></ion-datetime>
+          <ion-datetime displayFormat="DD/MM/YYYY" doneText="Okay" cancelText="Annulla" ></ion-datetime>
 
            <!--   <ion-label>Periodo</ion-label>
               <ion-datetime
@@ -90,7 +93,10 @@
 
  <ion-item>
     <ion-label>Compito</ion-label>
-    <ion-textarea rows="15" cols="20" placeholder="Scrivi qua il compito"></ion-textarea>
+    <ion-textarea rows="10" cols="20" placeholder="Scrivi qua il compito"></ion-textarea>
   </ion-item>
+
+  <button ion-button block type="submit"  (click)="inserisci()" block>Inserisci</button>
+  <button ion-button block type="submit" (click)="tornahome()" block>Home</button>
 
 </ion-content>

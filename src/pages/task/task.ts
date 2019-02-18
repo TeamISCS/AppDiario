@@ -18,8 +18,22 @@ export class TaskPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TaskPage');
+  ionViewDidLoad(){
+   this.getCompito()
+  }
+
+  generaCompito(compito){
+    console.log(compito["idCompito"])
+
+  }
+
+  getCompito() {
+    this.generaCompito({
+      "idCompito": "1",
+      "titolo": "studia",
+      "materia": "storia",
+      "descrizione": "Studiare da pag 20 a pag 50"
+    })
   }
 
 }

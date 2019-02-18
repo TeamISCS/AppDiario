@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HomePage } from './../home/home';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,6 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingTaskPage {
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -22,4 +24,7 @@ export class SettingTaskPage {
     console.log('ionViewDidLoad SettingTaskPage');
   }
 
+  tornahome():void{
+      this.navCtrl.setRoot(HomePage)
+  }
 }

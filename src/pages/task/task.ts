@@ -1,20 +1,21 @@
 import { HomePage } from './../home/home';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TaskPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
   selector: 'page-task',
   templateUrl: 'task.html',
 })
+
+
+
+
+
+
 export class TaskPage {
+
+  @ViewChild('descrizione') desc: HTMLTextAreaElement
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -24,9 +25,10 @@ export class TaskPage {
   }
 
   generaCompito(compito){
+
     document.getElementById("titolo").innerHTML=compito["titolo"]
     document.getElementById("materia").innerHTML=compito["materia"]
-    document.getElementById("descrizione").innerHTML=compito["descrizione"]
+    document.getElementById("descrizione").innerHTML = compito["descrizione"]
   }
 
   getCompito() {
@@ -38,8 +40,10 @@ export class TaskPage {
     })
   }
 
-  tornaindietro():void{
-    this.navCtrl.setRoot(HomePage)
-}
+
+  tornaindietro(){
+      this.navCtrl.setRoot(HomePage);
+  }
+
 
 }

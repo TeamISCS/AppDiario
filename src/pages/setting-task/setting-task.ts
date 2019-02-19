@@ -1,6 +1,7 @@
 import { HomePage } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
 
 /**
  * Generated class for the SettingTaskPage page.
@@ -16,12 +17,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingTaskPage {
 
+  @ViewChild('select') select: HTMLSelectElement
+  @ViewChild('title') titolo: HTMLInputElement
+  @ViewChild('task') task: HTMLTextAreaElement
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data = {
+  "title": "",
+  "task": "",
+  "matter": "",
+  "teacher": "2"
+}
+
+
+
+  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingTaskPage');
+
+  inserisci() {
+
+    this.data.title = this.titolo.value
+    this.data.matter = this.select.value
+    this.data.task = this.task.value
+
+    this.api.post("inseriscitask", this.data)
+    .subscribe(data => {
+      console.log(data["status"])
+    },
+    error =>{
+      console.log("errore")
+    })
+
   }
 
   tornahome():void{

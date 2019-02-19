@@ -24,7 +24,7 @@
       <div>
           <ion-item>
               <ion-label>Titolo</ion-label>
-              <ion-input type="text" #titolo class="block"></ion-input>
+              <ion-input type="text" #title class="block"></ion-input>
           </ion-item>
       </div>
 
@@ -32,12 +32,12 @@
       <ion-list>
           <ion-item>
               <ion-label>Materia</ion-label>
-              <ion-select value="brown" okText="Okay" cancelText="Annulla">
-                  <ion-option value="ita">Italiano</ion-option>
-                  <ion-option value="mate">Matematica</ion-option>
-                  <ion-option value="ing">Inglese</ion-option>
-                  <ion-option value="inf">Informatica</ion-option>
-                  <ion-option value="edf">Ed. fisica</ion-option>
+              <ion-select #select value="brown" okText="Okay" cancelText="Annulla">
+                  <ion-option value="Italiano">Italiano</ion-option>
+                  <ion-option value="Matematica">Matematica</ion-option>
+                  <ion-option value="Inglese">Inglese</ion-option>
+                  <ion-option value="Informatica">Informatica</ion-option>
+                  <ion-option value="Ed.Fisica">Ed. fisica</ion-option>
               </ion-select>
             </ion-item>
         </ion-list>
@@ -93,7 +93,7 @@
 
  <ion-item>
     <ion-label>Compito</ion-label>
-    <ion-textarea rows="10" cols="20" placeholder="Scrivi qua il compito"></ion-textarea>
+    <ion-textarea #task rows="10" cols="20" placeholder="Scrivi qua il compito"></ion-textarea>
   </ion-item>
 
   <button ion-button block type="submit"  (click)="inserisci()" block>Inserisci</button>

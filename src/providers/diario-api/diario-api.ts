@@ -21,7 +21,7 @@ export class DiarioApiProvider {
       "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "*",
         "Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
-    
+
       })
     };
 
@@ -31,11 +31,11 @@ export class DiarioApiProvider {
   }
 
   post(pathUrl, data){
-    return this.http.post((this.urlApp + pathUrl), data, this.httpOptions) 
+    return this.http.post((this.urlApp + pathUrl), data, this.httpOptions)
   }
 
 
-  get(pathUrl, data){
-    return this.http.get((this.urlApp + pathUrl), data)
+  get(pathUrl){
+    return this.http.get((this.urlApp + pathUrl))
   }
 }

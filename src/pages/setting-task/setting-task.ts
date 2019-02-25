@@ -2,6 +2,7 @@ import { HomePage } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
+import { markParentViewsForCheckProjectedViews } from '@angular/core/src/view/util';
 
 /**
  * Generated class for the SettingTaskPage page.
@@ -28,15 +29,21 @@ export class SettingTaskPage {
   "teacher": "2"
 }
 
+materie = []
 
+IonViewDidLoad(){
+  this.api.get("/matter/all")
+  .subscribe(data => {
+    this.materie.push(data)
+  })
+}
 
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
-
   inserisci() {
 
-    this.data.title = this.titolo.value
+    /*this.data.title = this.titolo.value
     this.data.matter = this.select.value
     this.data.task = this.task.value
 
@@ -47,7 +54,9 @@ export class SettingTaskPage {
     error =>{
       console.log("errore")
     })
+*/
 
+console.log(this.select.value)
   }
 
   tornahome():void{

@@ -33,11 +33,7 @@
           <ion-item>
               <ion-label>Materia</ion-label>
               <ion-select #select value="brown" okText="Okay" cancelText="Annulla">
-                  <ion-option value="Italiano">Italiano</ion-option>
-                  <ion-option value="Matematica">Matematica</ion-option>
-                  <ion-option value="Inglese">Inglese</ion-option>
-                  <ion-option value="Informatica">Informatica</ion-option>
-                  <ion-option value="Ed.Fisica">Ed. fisica</ion-option>
+                <ion-option *ngFor="let materia of materie" value = "{{materia['idMatter']}}">{{materia['name']}}</ion-option>
               </ion-select>
             </ion-item>
         </ion-list>

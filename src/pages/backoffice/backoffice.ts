@@ -44,19 +44,23 @@ export class BackofficePage {
     this.data.name=this.nome.value;
     this.data.surname=this.cognome.value;
     this.data.birth_place=this.luogo.value;
-    this.data.privilege=this.privilegio.value;
+    if(this.privilegio.value == "studente")
+    this.data.privilege="1";
+    else if(this.privilegio.value == "genitore")
+    this.data.privilege="2";
+    else if(this.privilegio.value == "docente")
+    this.data.privilege="3";
 
-    console.log(this.privilegio.value)
 
-  /*  this.api.post('registrazioneutente', this.data)
+    this.api.post('add', this.data)
     .subscribe(data => {
       console.log(data)
-      localStorage.setItem('jwt', data['jwt'])
+
     },
     error => {
       console.log("errore")
     })
-*/
+
   }
 
 }

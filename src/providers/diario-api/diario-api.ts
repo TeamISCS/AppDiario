@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable()
 
 export class DiarioApiProvider {
-  urlApp ="http://localhost:8080/"
+  urlApp ="http://localhost:8080/api"
   dataExit = []
 
   constructor(public http: HttpClient) {
@@ -21,7 +21,7 @@ export class DiarioApiProvider {
       "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "*",
         "Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
-    
+
       })
     };
 
@@ -31,7 +31,7 @@ export class DiarioApiProvider {
   }
 
   post(pathUrl, data){
-    return this.http.post((this.urlApp + pathUrl), data, this.httpOptions) 
+    return this.http.post((this.urlApp + pathUrl), data, this.httpOptions)
   }
 
 

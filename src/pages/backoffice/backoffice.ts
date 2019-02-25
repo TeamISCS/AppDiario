@@ -29,12 +29,26 @@ export class BackofficePage {
 
 
   data = {
-    "usernameUtente": "",
-    "passwordUtente": "",
-    "mailUtente": ""
+    "username": "",
+    "password": "",
+    "name": "",
+    "surname": "",
+    "birth_place": "",
+    "cf": "",
+    "privilege": ""
  }
+
   register() {
-    this.api.post('registrazioneutente', this.data)
+    this.data.username=this.user.value;
+    this.data.password=this.pass.value;
+    this.data.name=this.nome.value;
+    this.data.surname=this.cognome.value;
+    this.data.birth_place=this.luogo.value;
+    this.data.privilege=this.privilegio.value;
+
+    console.log(this.privilegio.value)
+
+  /*  this.api.post('registrazioneutente', this.data)
     .subscribe(data => {
       console.log(data)
       localStorage.setItem('jwt', data['jwt'])
@@ -42,7 +56,7 @@ export class BackofficePage {
     error => {
       console.log("errore")
     })
-
+*/
   }
 
 }

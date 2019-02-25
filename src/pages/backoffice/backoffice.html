@@ -7,31 +7,31 @@
       <h1> Aggiungi persona</h1>
       <br><br>
       Username:<br>
-        <input type="text" name="username" >
+        <input type="text" name="username" #username >
       <br>
       Password:<br>
-        <input type="text" name="password">
+        <input type="text" name="password" #password>
       <br>
       Nome:<br>
-      <input type="text" name="nome">
+      <input type="text" name="nome" #nome>
       <br>
       Cognome:<br>
-      <input type="text" name="cognome" >
+      <input type="text" name="cognome" #cognome>
       <br>
       Luogo di nascita:<br>
-      <input type="text" name="luogo">
+      <input type="text" name="luogo" #luogo>
       <br>
       Codice Fiscale:<br>
-      <input type="text" name="cf">
+      <input type="text" name="cf" #cf>
       <br>
       Tipo:<br>
-      <select name="privilegio">
+      <select name="privilegio" #privilegio>
         <option value="studente">Studente</option>
         <option value="docente">Docente</option>
         <option value="genitore">Genitore</option>
       </select>
       <br><br>
-      <input type="submit" value="Inserisci" (click)="insert()">
+      <input type="submit" value="Inserisci" (click)="register()">
     </form>
   </body>
 </html>

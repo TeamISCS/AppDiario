@@ -1,15 +1,7 @@
 import { HomePage } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
-import { markParentViewsForCheckProjectedViews } from '@angular/core/src/view/util';
-
-/**
- * Generated class for the SettingTaskPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -23,23 +15,34 @@ export class SettingTaskPage {
   @ViewChild('task') task: HTMLTextAreaElement
 
   data = {
-  "title": "",
-  "task": "",
-  "matter": "",
-  "teacher": "2"
-}
+    "title": "",
+    "task": "",
+    "matter": "",
+    "teacher": "2"
+  }
 
-materie = []
-
-IonViewDidLoad(){
-  this.api.get("/matter/all")
-  .subscribe(data => {
-    this.materie.push(data)
-  })
-}
+  materie = []
 
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
+
+  ionViewDidLoad() {
+
+
+    console.log("ciao")
+
+    this.api.get("/matter/all")
+      .subscribe(data => {
+        data.forEach(dat => {
+          this.materie.push(dat)
+        })
+      },
+        error => {
+          console.log("errore")
+        })
+
+  }
+
 
   inserisci() {
 
@@ -56,10 +59,10 @@ IonViewDidLoad(){
     })
 */
 
-console.log(this.select.value)
+    console.log(this.select.value)
   }
 
-  tornahome():void{
-      this.navCtrl.setRoot(HomePage)
+  tornahome(): void {
+    this.navCtrl.setRoot(HomePage)
   }
 }

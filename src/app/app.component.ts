@@ -1,3 +1,4 @@
+import { BackofficeClassPage } from './../pages/backoffice-class/backoffice-class';
 import { BackofficePage } from './../pages/backoffice/backoffice';
 import { LoginPage } from './../pages/login/login';
 import { Component } from '@angular/core';
@@ -8,7 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = BackofficePage;
+  rootPage:any = BackofficeClassPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

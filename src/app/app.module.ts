@@ -1,3 +1,4 @@
+import { BackofficeClassPage } from './../pages/backoffice-class/backoffice-class';
 import { BackofficePage } from './../pages/backoffice/backoffice';
 import { LoginPage } from './../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
@@ -18,7 +19,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
     HomePage,
     RegisterPage,
     LoginPage,
-    BackofficePage
+    BackofficePage,
+    BackofficeClassPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
     HomePage,
     RegisterPage,
     LoginPage,
-    BackofficePage
+    BackofficePage,
+    BackofficeClassPage
   ],
   providers: [
     StatusBar,

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,11 +16,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BackofficePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  @ViewChild('username') user: HTMLInputElement
+  @ViewChild('password') pass: HTMLInputElement
+  @ViewChild('nome') nome: HTMLInputElement
+  @ViewChild('cognome') cognome: HTMLInputElement
+  @ViewChild('luogo') luogo: HTMLInputElement
+  @ViewChild('cf') cf: HTMLInputElement
+  @ViewChild('privilegio') privilegio: HTMLSelectElement
+
+  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BackofficePage');
+
+  data = {
+    "usernameUtente": "",
+    "passwordUtente": "",
+    "mailUtente": ""
+ }
+  register() {
+    this.api.post('registrazioneutente', this.data)
+    .subscribe(data => {
+      console.log(data)
+      localStorage.setItem('jwt', data['jwt'])
+    },
+    error => {
+      console.log("errore")
+    })
+
   }
 
 }

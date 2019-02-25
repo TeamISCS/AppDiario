@@ -1,3 +1,4 @@
+import { BackofficeMateriaPage } from './../pages/backoffice-materia/backoffice-materia';
 import { BackofficeClassPage } from './../pages/backoffice-class/backoffice-class';
 import { BackofficePage } from './../pages/backoffice/backoffice';
 import { LoginPage } from './../pages/login/login';
@@ -9,7 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = BackofficeClassPage;
+  rootPage:any = BackofficeMateriaPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

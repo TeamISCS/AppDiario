@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable()
 
 export class DiarioApiProvider {
-  urlApp ="http://localhost:8080/api/"
+  urlApp ="http://localhost:8080/"
   dataExit = []
 
   constructor(public http: HttpClient) {

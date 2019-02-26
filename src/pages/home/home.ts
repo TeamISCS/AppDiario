@@ -15,16 +15,19 @@ export class HomePage {
 
   ionViewDidLoad() {
     document.getElementById("welcome").innerHTML = 
-      `Benvenuto ${localStorage.getItem('nome')} ${localStorage.getItem('cognome')}`
+      `Benvenuto ${localStorage.getItem('name')} ${localStorage.getItem('surname')}`
   }
 
 
   logout() {
     localStorage.removeItem("jwt")
-    localStorage.removeItem("mail")
-    localStorage.removeItem("nome")
-    localStorage.removeItem("cognome")
     localStorage.removeItem("username")
+    localStorage.removeItem("name")
+    localStorage.removeItem("surname")
+    localStorage.removeItem("birth_place")
+    localStorage.removeItem("classroom")
+    localStorage.removeItem("CF")
+    localStorage.removeItem("gender")
     this.navCtrl.setRoot(LoginPage)
   }
 

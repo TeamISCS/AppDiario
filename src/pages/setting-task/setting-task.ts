@@ -50,7 +50,7 @@ export class SettingTaskPage {
     this.data.matter = this.select.value
     this.data.task = this.task.value
 
-    this.api.post("inseriscitask", this.data)
+    this.api.post("api/task/add", this.data)
     .subscribe(data => {
       console.log(data["status"])
     },

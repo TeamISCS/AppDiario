@@ -1,3 +1,4 @@
+import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -17,11 +18,11 @@ import { SearchPage } from '../search/search';
 })
 export class UserPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
   ionViewDidLoad() {
-    this.getUser()
+   this.getUser() 
   }
 
   generaUser(user){
@@ -31,15 +32,26 @@ export class UserPage {
   }
 
   getUser(){
+    localStorage.setItem("username", "raz")
+    let data = {
+      name: "",
+      surname: "",
+      gender: "",
+      ldn: "",
+      classroom: "",
+      username: ""
+    }
 
-    this.generaUser({
-      nome: "Mirko",
-      cognome: "Aliano",
-      classe: "5F",
-      username: "Mirkooooo19292",
-      ldn: "Torino",
-      sex: "M"
-    })
+    this.api.get(`api/student/info/${localStorage.getItem("username")}`)
+    .subscribe(student => {
+      data.name = student["name"]
+      data.surname = student["surname"]
+      data.gender = student["gender"]
+      data.ldn = student["birth_place"]
+      data.classroom = student["classroom"]
+      data.username = localStorage.getItem("username")
+      this.generaUser(data)
+    });
   }
 
   calendarClick(){

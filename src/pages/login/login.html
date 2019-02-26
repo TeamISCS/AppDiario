@@ -8,18 +8,15 @@
 
 <ion-content id="content" padding>
 
-    <div id="div-title">
-      Login
-    </div>
 
-    <div id="div-contet">
-      <p style="display: none" id="error"></p>
-      <div class="center">
-        <ion-input type="text" placeholder="Username" #user class="block"></ion-input>
-        <ion-input type="password" placeholder="Password" #pass class="block"></ion-input>
-        <button ion-button block type="submit" (click)="controlla()" class="block">Login</button>
-        <button ion-button block type="submit" (click)="registerPage()" class="block">Sign up</button>
-      </div>
-    </div>
+    <ion-input type="text" placeholder="Username" #user></ion-input>
+
+
+    <ion-input type="password" placeholder="Password" #pass></ion-input>
+
+
+    <button ion-button block type="submit" (click)="controlla()" class="block">Login</button>
+ 
+    <button ion-button block type="submit" (click)="registerPage()" class="block">Sign up</button>
 
   </ion-content>

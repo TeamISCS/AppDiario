@@ -27,8 +27,8 @@ export class LoginPage {
   controlla(): void {
     this.data.usernameUtente = this.user.value
     this.data.passwordUtente = this.pass.value
-  
-    this.api.post('accessoutente', this.data)
+
+    this.api.post('login', this.data)
       .subscribe(data => {
 
         if(data != null) {
@@ -49,7 +49,7 @@ export class LoginPage {
         document.getElementById("error").innerHTML = "Credenziali sbagliate"
       })
 
-    
+
   }
 
   registerPage(): void {

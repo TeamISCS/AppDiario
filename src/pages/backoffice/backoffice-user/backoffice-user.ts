@@ -1,9 +1,9 @@
-import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
+import { DiarioApiProvider } from './../../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the BackofficePage page.
+ * Generated class for the BackofficeUserPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,10 +11,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-backoffice',
-  templateUrl: 'backoffice.html',
+  selector: 'page-backoffice-user',
+  templateUrl: 'backoffice-user.html',
 })
-export class BackofficePage {
+export class BackofficeUserPage {
+
+  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
+  }
 
   @ViewChild('username') user: HTMLInputElement
   @ViewChild('password') pass: HTMLInputElement
@@ -24,8 +27,6 @@ export class BackofficePage {
   @ViewChild('cf') cf: HTMLInputElement
   @ViewChild('privilegio') privilegio: HTMLSelectElement
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
-  }
 
 
   data = {
@@ -52,7 +53,7 @@ export class BackofficePage {
     this.data.privilege="3";
 
 
-    this.api.post('add', this.data)
+    this.api.post('api/user/add', this.data)
     .subscribe(data => {
       console.log(data)
 

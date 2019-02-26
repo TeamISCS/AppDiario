@@ -1,6 +1,6 @@
-import { BackofficeMateriaPage } from './../pages/backoffice-materia/backoffice-materia';
-import { BackofficeClassPage } from './../pages/backoffice-class/backoffice-class';
-import { BackofficePage } from './../pages/backoffice/backoffice';
+import { BackofficeMenuPage } from './../pages/backoffice/backoffice-menu/backoffice-menu';
+import { BackofficeMateriaPage } from './../pages/backoffice/backoffice-materia/backoffice-materia';
+import { BackofficeClassPage } from './../pages/backoffice/backoffice-class/backoffice-class';
 import { LoginPage } from './../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { DiarioApiProvider } from '../providers/diario-api/diario-api';
+import { BackofficeUserPage } from '../pages/backoffice/backoffice-user/backoffice-user';
 
 
 @NgModule({
@@ -20,9 +21,10 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
     HomePage,
     RegisterPage,
     LoginPage,
-    BackofficePage,
     BackofficeClassPage,
-    BackofficeMateriaPage
+    BackofficeMateriaPage,
+    BackofficeMenuPage,
+    BackofficeUserPage
   ],
   imports: [
     BrowserModule,
@@ -35,9 +37,10 @@ import { DiarioApiProvider } from '../providers/diario-api/diario-api';
     HomePage,
     RegisterPage,
     LoginPage,
-    BackofficePage,
     BackofficeClassPage,
-    BackofficeMateriaPage
+    BackofficeMateriaPage,
+    BackofficeMenuPage,
+    BackofficeUserPage
   ],
   providers: [
     StatusBar,

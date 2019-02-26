@@ -1,4 +1,4 @@
-import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
+import { DiarioApiProvider } from './../../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -33,7 +33,7 @@ export class BackofficeMateriaPage {
 
     this.data.name=this.materia.value;
 
-    this.api.post('add', this.data)
+    this.api.post('api/matter/add', this.data)
     .subscribe(data => {
       console.log(data)
 

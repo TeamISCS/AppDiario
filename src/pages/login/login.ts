@@ -51,12 +51,6 @@ export class LoginPage {
         document.getElementById("error").style.display = "block";
         document.getElementById("error").innerHTML = "Credenziali sbagliate"
       })
-
-
-  }
-
-  registerPage(): void {
-    this.navCtrl.setRoot(RegisterPage)
   }
 
   ionViewDidLoad(){

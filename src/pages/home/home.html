@@ -14,3 +14,29 @@
   <button ion-button type="submit" (click)="logout()">Logout</button>
 </ion-content>
 
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col>
+        <div class="block" (click)="searchClick()">
+          <ion-icon name="search"></ion-icon>
+        </div>
+      </ion-col>
+
+      <ion-col>
+       <div class="block" (click)="calendarClick()">
+          <ion-icon name="calendar"></ion-icon>
+       </div>
+      </ion-col>
+
+      <ion-col>
+       <div class="block" (click)="personClick()">
+         <ion-icon name="person"></ion-icon>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>

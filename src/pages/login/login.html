@@ -1,11 +1,11 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>Login</ion-title>
+    <ion-navbar color="bluapp">
+      <ion-title >Login</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content id="content" padding>
-    <ion-input text-center type="text" placeholder="Username" #user></ion-input>
-    <ion-input text-center type="password" placeholder="Password" #pass></ion-input>
-    <button ion-button block type="submit" (click)="controlla()" class="block">Login</button>
+<ion-content padding>
+    <ion-input text-center type="text" placeholder="Username" #user class="block"></ion-input>
+    <ion-input text-center type="password" placeholder="Password" #pass class="block"></ion-input>
+    <button ion-button type="submit" (click)="controlla()" class="block">Login</button>
 </ion-content>

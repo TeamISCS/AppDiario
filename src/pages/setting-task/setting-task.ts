@@ -46,7 +46,7 @@ export class SettingTaskPage {
 
   inserisci() {
 
-    /*this.data.title = this.titolo.value
+    this.data.title = this.titolo.value
     this.data.matter = this.select.value
     this.data.task = this.task.value
 
@@ -57,7 +57,7 @@ export class SettingTaskPage {
     error =>{
       console.log("errore")
     })
-*/
+
 
     console.log(this.select.value)
   }

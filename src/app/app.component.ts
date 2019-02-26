@@ -1,3 +1,4 @@
+import { HomePage } from './../pages/home/home';
 import { BackofficeMenuPage } from './../pages/backoffice/backoffice-menu/backoffice-menu';
 import { BackofficeMateriaPage } from './../pages/backoffice/backoffice-materia/backoffice-materia';
 import { BackofficeClassPage } from './../pages/backoffice/backoffice-class/backoffice-class';

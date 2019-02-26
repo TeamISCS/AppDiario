@@ -1,0 +1,56 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>search</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Ricerca per:</ion-label>
+            <ion-select value="ricerca" okText="Okay" cancelText="Annulla">
+                <ion-option value="materia">Materia</ion-option>
+                <ion-option value="professore">Professore</ion-option>
+                <ion-option value="data">Data</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+    <ion-searchbar animated></ion-searchbar>
+</ion-content>
+
+
+<ion-footer>
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <div class="block" (click)="searchClick()">
+            <ion-icon name="search"></ion-icon>
+          </div>
+        </ion-col>
+
+        <ion-col>
+         <div class="block" (click)="calendarClick()">
+            <ion-icon name="calendar"></ion-icon>
+         </div>
+        </ion-col>
+
+        <ion-col>
+         <div class="block" (click)="personClick()">
+           <ion-icon name="person"></ion-icon>
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-footer>

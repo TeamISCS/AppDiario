@@ -31,7 +31,7 @@ export class SettingTaskPage {
 
     console.log("ciao")
 
-    this.api.get("/matter/all")
+    /*this.api.get("/matter/all")
       .subscribe(data => {
         data.forEach(dat => {
           this.materie.push(dat)
@@ -40,7 +40,7 @@ export class SettingTaskPage {
         error => {
           console.log("errore")
         })
-
+        */
   }
 
 

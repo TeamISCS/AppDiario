@@ -1,3 +1,5 @@
+import { TaskPage } from './../pages/task/task';
+import { UserPage } from './../pages/user/user';
 import { BackofficeMenuPage } from './../pages/backoffice/backoffice-menu/backoffice-menu';
 import { BackofficeMateriaPage } from './../pages/backoffice/backoffice-materia/backoffice-materia';
 import { BackofficeClassPage } from './../pages/backoffice/backoffice-class/backoffice-class';
@@ -13,6 +15,7 @@ import { HomePage } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http';
 import { DiarioApiProvider } from '../providers/diario-api/diario-api';
 import { BackofficeUserPage } from '../pages/backoffice/backoffice-user/backoffice-user';
+import { SearchPage } from '../pages/search/search';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { BackofficeUserPage } from '../pages/backoffice/backoffice-user/backoffi
     BackofficeClassPage,
     BackofficeMateriaPage,
     BackofficeMenuPage,
-    BackofficeUserPage
+    BackofficeUserPage,
+    UserPage,
+    TaskPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,10 @@ import { BackofficeUserPage } from '../pages/backoffice/backoffice-user/backoffi
     BackofficeClassPage,
     BackofficeMateriaPage,
     BackofficeMenuPage,
-    BackofficeUserPage
+    BackofficeUserPage,
+    UserPage,
+    TaskPage,
+    SearchPage
   ],
   providers: [
     StatusBar,

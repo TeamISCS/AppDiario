@@ -30,6 +30,24 @@
 
   </ion-item>
 
+    <ion-list radio-group>
+
+        <ion-list-header>
+          <ion-label>Name</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Biff</ion-label>
+          <ion-radio slot="start" value="biff" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Griff</ion-label>
+          <ion-radio slot="start" value="griff"></ion-radio>
+        </ion-item>
+  </ion-list>
+
+
   <ion-item>
 
   <ion-input placeholder="luogo nascita" type="text" name="luogo" #luogo></ion-input>
@@ -41,11 +59,13 @@
 
   </ion-item>
 
+
   <ion-item>
   <ion-select name="privilegio" #privilegio>
   <ion-option value="studente">Studente</ion-option>
   <ion-option value="docente">Docente</ion-option>
   <ion-option value="genitore">Genitore</ion-option>
+  <ion-option value="backoffice">Back-office</ion-option>
   </ion-select>
 
   </ion-item>

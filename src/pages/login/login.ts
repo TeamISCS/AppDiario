@@ -44,13 +44,15 @@ export class LoginPage {
           this.navCtrl.setRoot(HomePage)
         }
         else {
-          document.getElementById("error").style.display = "block";
-          document.getElementById("error").innerHTML = "Credenziali sbagliate"
+          console.log("else")
+        /*  document.getElementById("error").style.display = "block";
+          document.getElementById("error").innerHTML = "Credenziali sbagliate"*/
         }
       },
       error => {
-        document.getElementById("error").style.display = "block";
-        document.getElementById("error").innerHTML = "Credenziali sbagliate"
+        console.log("error")
+       /* document.getElementById("error").style.display = "block";
+        document.getElementById("error").innerHTML = "Credenziali sbagliate"*/
       })
   }
 

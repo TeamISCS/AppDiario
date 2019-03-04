@@ -26,6 +26,7 @@ export class BackofficeUserPage {
   @ViewChild('cognome') cognome: HTMLInputElement
   @ViewChild('luogo') luogo: HTMLInputElement
   @ViewChild('cf') cf: HTMLInputElement
+  @ViewChild('gender') gender: HTMLInputElement
   @ViewChild('privilegio') privilegio: HTMLSelectElement
 
 
@@ -37,13 +38,14 @@ export class BackofficeUserPage {
     "surname": "",
     "birth_place": "",
     "cf": "",
+    "gender":"",
     "privilege": ""
  }
 
   register() {
     console.log(this.cognome.value)
 
-    if(!this.cf.value ||!this.nome.value ||!this.user.value ||!this.pass.value  ||!this.cognome.value ||!this.luogo.value  ||!this.privilegio.value ){
+    if(!this.cf.value ||!this.nome.value ||!this.user.value ||!this.pass.value  ||!this.cognome.value ||!this.luogo.value  ||!this.privilegio.value ||!this.gender.value ){
       document.getElementById("gg").style.display = "block"
       document.getElementById("gg").innerHTML = "C'è un campo vuoto"
     }
@@ -67,6 +69,8 @@ export class BackofficeUserPage {
     this.data.privilege="2";
     else if(this.privilegio.value == "docente")
     this.data.privilege="3";
+    else if(this.privilegio.value == "backoffice")
+    this.data.privilege="4"
 
 
     this.api.post('api/user/add', this.data)

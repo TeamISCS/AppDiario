@@ -22,7 +22,7 @@ export class UserPage {
   }
 
   ionViewDidLoad() {
-   this.getUser() 
+   this.getUser()
   }
 
   generaUser(user){
@@ -32,7 +32,7 @@ export class UserPage {
   }
 
   getUser(){
-    localStorage.setItem("username", "raz")
+
     let data = {
       name: "",
       surname: "",
@@ -44,6 +44,7 @@ export class UserPage {
 
     this.api.get(`api/student/info/${localStorage.getItem("username")}`)
     .subscribe(student => {
+      console.log(student)
       data.name = student["name"]
       data.surname = student["surname"]
       data.gender = student["gender"]

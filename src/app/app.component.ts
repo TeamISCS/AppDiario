@@ -1,3 +1,4 @@
+import { CalendarPage } from './../pages/calendar/calendar';
 import { HomePage } from './../pages/home/home';
 import { BackofficeMenuPage } from './../pages/backoffice/backoffice-menu/backoffice-menu';
 import { BackofficeMateriaPage } from './../pages/backoffice/backoffice-materia/backoffice-materia';
@@ -11,7 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = CalendarPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

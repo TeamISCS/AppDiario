@@ -40,6 +40,7 @@ export class LoginPage {
           localStorage.setItem("classroom", data["classroom"])
           localStorage.setItem("CF", data["CF"])
           localStorage.setItem("gender", data["gender"])
+          localStorage.setItem("privilege", data["privilege"])
           this.navCtrl.setRoot(HomePage)
         }
         else {

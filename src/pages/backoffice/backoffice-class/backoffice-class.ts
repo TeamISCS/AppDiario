@@ -34,17 +34,37 @@ export class BackofficeClassPage {
 
   aggiungi(){
 
+    if(!this.classe.value || !this.sezione.value)
+    {
+      document.getElementById("sms").style.display = "block"
+      document.getElementById("sms").innerHTML = "C'è un campo vuoto"
+    }
+   /* else if(!new RegExp('^[0-9]+$').test(document.getElementById("oo").innerHTML)) {
+      document.getElementById("sms").style.display = "block"
+      document.getElementById("sms").innerHTML= "Non hai inserito un numero nel campo Classe o numero non valido"
+
+    }*/
+    else
+    {
+    document.getElementById("sms").style.display = "none"
     this.data.year=this.classe.value;
     this.data.section=this.sezione.value;
 
     this.api.post('api/classroom/add', this.data)
     .subscribe(data => {
       console.log(data)
-
+      if(data['status']=='added'){
+        document.getElementById("sms").style.display = "block"
+        document.getElementById("sms").style.color = "black"
+        document.getElementById("sms").innerHTML = "La classe è stato aggiunta con successo"
+      }
     },
     error => {
       console.log("errore")
     })
   }
+  }
+
+
 
 }

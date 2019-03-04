@@ -18,8 +18,13 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    document.getElementById("welcome").innerHTML = 
+    if(localStorage.getItem("username") != null) {
+      document.getElementById("welcome").innerHTML =
       `Benvenuto ${localStorage.getItem('name')} ${localStorage.getItem('surname')}`
+    }
+    else {
+    this.navCtrl.setRoot(LoginPage)
+    }
   }
 
 

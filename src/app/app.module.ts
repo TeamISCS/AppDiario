@@ -1,3 +1,4 @@
+import { CalendarPage } from './../pages/calendar/calendar';
 import { TaskPage } from './../pages/task/task';
 import { UserPage } from './../pages/user/user';
 import { BackofficeMenuPage } from './../pages/backoffice/backoffice-menu/backoffice-menu';
@@ -30,7 +31,8 @@ import { SearchPage } from '../pages/search/search';
     BackofficeUserPage,
     UserPage,
     TaskPage,
-    SearchPage
+    SearchPage,
+    CalendarPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { SearchPage } from '../pages/search/search';
     BackofficeUserPage,
     UserPage,
     TaskPage,
-    SearchPage
+    SearchPage,
+    CalendarPage
   ],
   providers: [
     StatusBar,

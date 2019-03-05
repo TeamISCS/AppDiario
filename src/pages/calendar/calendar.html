@@ -9,11 +9,8 @@
 
 
 <ion-content padding>
-
-<ion-slides>
-  <ion-slide *ngFor = "let m of months">
-    <div id={{m}} style="border: 1px solid black">w</div>
-  </ion-slide>
-</ion-slides>
+  <ion-slides #myslide>
+    <ion-slide id="slide{{m}}" *ngFor="let m of monthsy"><div id={{m}} class="block">{{createCalendar(m)}}</div></ion-slide>
+  </ion-slides>
 </ion-content>
 

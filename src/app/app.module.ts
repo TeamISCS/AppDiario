@@ -1,4 +1,4 @@
-import { CalendarPage } from './../pages/calendar/calendar';
+
 import { TaskPage } from './../pages/task/task';
 import { UserPage } from './../pages/user/user';
 import { BackofficeMenuPage } from './../pages/backoffice/backoffice-menu/backoffice-menu';
@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DiarioApiProvider } from '../providers/diario-api/diario-api';
 import { BackofficeUserPage } from '../pages/backoffice/backoffice-user/backoffice-user';
 import { SearchPage } from '../pages/search/search';
+import { SettingTaskPage } from '../pages/setting-task/setting-task';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { SearchPage } from '../pages/search/search';
     UserPage,
     TaskPage,
     SearchPage,
-    CalendarPage
+    SettingTaskPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,7 @@ import { SearchPage } from '../pages/search/search';
     UserPage,
     TaskPage,
     SearchPage,
-    CalendarPage
+    SettingTaskPage
   ],
   providers: [
     StatusBar,

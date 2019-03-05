@@ -12,8 +12,12 @@
   <div id="welcome"></div>
 
   <button ion-button type="submit" (click)="logout()">Logout</button>
-</ion-content>
 
+      <ion-slides #myslide>
+        <ion-slide id="slide{{m}}" *ngFor="let m of monthsy"><div id={{m}} class="block">{{createCalendar(m)}}</div></ion-slide>
+      </ion-slides>
+   
+</ion-content>
 
 <ion-footer>
   <ion-grid>

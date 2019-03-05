@@ -1,7 +1,6 @@
 import { DiarioApiProvider } from './../../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { copyFile } from 'fs';
 
 /**
  * Generated class for the BackofficeUserPage page.
@@ -26,7 +25,7 @@ export class BackofficeUserPage {
   @ViewChild('cognome') cognome: HTMLInputElement
   @ViewChild('luogo') luogo: HTMLInputElement
   @ViewChild('cf') cf: HTMLInputElement
-  @ViewChild('gender') gender: HTMLInputElement
+  @ViewChild('gender') gender: HTMLSelectElement
   @ViewChild('privilegio') privilegio: HTMLSelectElement
 
 
@@ -62,6 +61,8 @@ export class BackofficeUserPage {
     this.data.name=this.nome.value;
     this.data.surname=this.cognome.value;
     this.data.birth_place=this.luogo.value;
+    this.data.cf=this.cf.value;
+    this.data.gender=this.gender.value;
 
     if(this.privilegio.value == "studente")
     this.data.privilege="1";

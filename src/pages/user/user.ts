@@ -34,25 +34,16 @@ export class UserPage {
   getUser(){
 
     let data = {
-      name: "",
-      surname: "",
-      gender: "",
-      ldn: "",
-      classroom: "",
-      username: ""
+      name: localStorage.getItem("name"),
+      surname: localStorage.getItem("surname"),
+      gender: localStorage.getItem("gender"),
+      ldn: localStorage.getItem("birth_place"),
+      classroom: localStorage.getItem("classroom"),
+      username: localStorage.getItem("username"),
+      CF: localStorage.getItem("CF")
     }
 
-    this.api.get(`api/student/info/${localStorage.getItem("username")}`)
-    .subscribe(student => {
-      console.log(student)
-      data.name = student["name"]
-      data.surname = student["surname"]
-      data.gender = student["gender"]
-      data.ldn = student["birth_place"]
-      data.classroom = student["classroom"]
-      data.username = localStorage.getItem("username")
-      this.generaUser(data)
-    });
+    this.generaUser(data)
   }
 
   calendarClick(){

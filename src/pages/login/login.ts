@@ -32,16 +32,12 @@ export class LoginPage {
       .subscribe(data => {
         if(data != null) {
           console.log(data)
-          localStorage.setItem("jwt", data["jwt"])
-          localStorage.setItem("username", data["username"])
-          localStorage.setItem("name", data["name"])
-          localStorage.setItem("surname", data["surname"])
-          localStorage.setItem("birth_place", data["birth_place"])
-          localStorage.setItem("classroom", data["classroom"])
-          localStorage.setItem("CF", data["CF"])
-          localStorage.setItem("gender", data["gender"])
-          localStorage.setItem("privilege", data["privilege"])
-          this.navCtrl.setRoot(HomePage)
+          //localStorage.setItem("jwt", data["jwt"])
+          if(data["username"]) {
+            localStorage.setItem("username", data["username"])
+            localStorage.setItem("privilege", data["privilege"])
+            this.navCtrl.setRoot(HomePage)
+          }
         }
         else {
           console.log("else")
@@ -57,7 +53,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad(){
-   if(localStorage.getItem('jwt') != null){
+   if(localStorage.getItem('username') != null){
      this.navCtrl.setRoot(HomePage)
    }
   }

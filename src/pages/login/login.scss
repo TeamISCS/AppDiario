@@ -1,17 +1,33 @@
+$headerHeight: 70px;
+$marginInputs: 20%;
 page-home {
-    
-
-}
-
-ion-navbar {
+  ion-header {
+    height: $headerHeight;
+  }
+  ion-navbar {
     background-color: STEELBLUE;
-
+    height: 100%;
+  }
+  ion-content {
+    margin-top: $headerHeight;
+  }
 }
-
-.input{
-    width: 50%;
+#error {
+  border: 2px solid;
+  border-radius: 1px;
+  color: crimson;
+  background-color: lightsalmon;
+  border-color: crimson;
+  font-size: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 15px;
+  top: calc($marginInputs + 30%);
+  border-radius: 3px 3px 3px 3px;
 }
-
-
-
-
+#input {
+  margin-top: $marginInputs;
+  width: 200px;
+  height: 200px;
+  font-size: 20px;
+}

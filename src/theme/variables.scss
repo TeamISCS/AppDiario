@@ -23,6 +23,9 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
+// height dell'header
+$headerHeight: 70px;
+$footerHeight: 55px;
 
 
 // Named Color Variables
@@ -39,8 +42,10 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  bluapp:     steelblue
+  colorApp:   steelblue
 );
+
+
 
 
 // App iOS Variables

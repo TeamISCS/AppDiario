@@ -1,11 +1,9 @@
-$headerHeight: 70px;
 $marginInputs: 20%;
 page-home {
   ion-header {
     height: $headerHeight;
   }
   ion-navbar {
-    background-color: STEELBLUE;
     height: 100%;
   }
   ion-content {

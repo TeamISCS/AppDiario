@@ -2,8 +2,37 @@ page-home {
 
 }
 
-.icon{
-  font-size: 80px;
+ion-icon{
+ zoom: 1.2;
+ color: white;
+}
+
+ion-grid {
+  height: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+ion-row {
+  height: 100%;
+}
+
+ion-col {
+  div {
+    height: 100%;
+    width: 100%;
+  }
+
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+
+}
+
+.currentSlide {
+  background-color: #326A99;
+
 }
 
 .block {

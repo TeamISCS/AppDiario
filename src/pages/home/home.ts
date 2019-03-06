@@ -107,9 +107,10 @@ createCalendar(month) {
 	this.calendars(new Date(new Date().getFullYear(), month))
 }
 
-provaprova(){
-  console.log("ciao")
-  this.navCtrl.push(SearchPage)
+
+setTask = element => {
+  let date = element.path[0].attributes.date.value
+  this.navCtrl.push(SettingTaskPage, {'date': date})
 }
 //DA FARE NEL CALENDAR.TS
 calendars(data){
@@ -140,7 +141,7 @@ calendars(data){
                     ttd.innerHTML = (cc.getDate()).toString()
                     ttd.setAttribute("date", cc.toLocaleDateString())
                     ttd.setAttribute("ex", "true")
-                    ttd.onclick = this.provaprova
+                    ttd.onclick = this.setTask
             	    ttr.appendChild(ttd)
             	    if(g != this.getDays(cc.getFullYear(), cc.getMonth() + 1)){
               	        g++
@@ -158,7 +159,7 @@ calendars(data){
                 ttd.innerHTML = (cc.getDate()).toString()
                 ttd.setAttribute("ex", "true")
                 ttd.setAttribute("date", cc.toLocaleDateString())
-                ttd.onclick = this.provaprova
+                ttd.onclick = this.setTask
             	ttr.appendChild(ttd)
             	if(g != this.getDays(cc.getFullYear(), cc.getMonth() + 1)){
               	g++

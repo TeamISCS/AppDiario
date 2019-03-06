@@ -1,6 +1,6 @@
 import { HomePage } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
 
 @IonicPage()
@@ -13,42 +13,34 @@ export class SettingTaskPage {
   @ViewChild('select') select: HTMLSelectElement
   @ViewChild('title') titolo: HTMLInputElement
   @ViewChild('task') task: HTMLTextAreaElement
+  @ViewChild('date') date: HTMLInputElement
 
   data = {
     "title": "",
     "task": "",
     "matter": "",
+    "createdTask": "",
+    "expiryTask": "",
     "teacher": "2"
   }
 
   materie = []
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
+  constructor(public navParams: NavParams, public navCtrl: NavController, public api: DiarioApiProvider) {
   }
 
-  ionViewDidLoad() {
-
-
-    console.log("ciao")
-
-    /*this.api.get("/matter/all")
-      .subscribe(data => {
-        data.forEach(dat => {
-          this.materie.push(dat)
-        })
-      },
-        error => {
-          console.log("errore")
-        })
-        */
+  ionViewWillEnter(){
+   this.date.value = this.navParams.get("date")
   }
 
 
   inserisci() {
-
+    this.data.createdTask = new Date().toLocaleDateString()
+    this.data.expiryTask = this.date.value
     this.data.title = this.titolo.value
     this.data.matter = this.select.value
     this.data.task = this.task.value
+    console.log(this.date.value)
 
     this.api.post("api/task/add", this.data)
     .subscribe(data => {

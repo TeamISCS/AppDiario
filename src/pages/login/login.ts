@@ -48,7 +48,7 @@ export class LoginPage {
     error => {
       console.log("error")
       document.getElementById("error").style.display = "block";
-      document.getElementById("error").innerHTML = "Credenziali sbagliate"
+      document.getElementById("error").innerHTML = "Errore di connessione"
     })
   }
 

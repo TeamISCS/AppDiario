@@ -122,7 +122,8 @@ calendars(data){
     table.id = "calendar"
     let days = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"]
   
-   	table.innerHTML += `<caption id="cap" data-year="${data.getFullYear()}" data-month="${data.getMonth()}">${months[data.getMonth()]} ${data.getFullYear()}</caption>`
+
+    table.innerHTML += `<tr class="month"><th colspan="7">${months[data.getMonth()]} ${data.getFullYear()}</th></tr>`
     let tr = document.createElement("tr")
     for(let i = 0; i < 7; i++){
     		let el = document.createElement("td")
@@ -141,16 +142,20 @@ calendars(data){
         	    if(cc.getDay() == j && g <= this.getDays(cc.getFullYear(), cc.getMonth() + 1)){
             	    let ttd = document.createElement("td")
                     ttd.innerHTML = (cc.getDate()).toString()
+                    if(cc.toLocaleDateString() == new Date().toLocaleDateString()){
+                      ttd.classList.add("currentDay")
+                    }
                     ttd.setAttribute("date", cc.toLocaleDateString())
                     ttd.setAttribute("ex", "true")
                     ttd.onclick = this.setTask
-            	    ttr.appendChild(ttd)
-            	    if(g != this.getDays(cc.getFullYear(), cc.getMonth() + 1)){
-              	        g++
-                        }
+            	      ttr.appendChild(ttd)
+            	      if(g != this.getDays(cc.getFullYear(), cc.getMonth() + 1)){
+              	      g++
+                    }
        		    }
           	    else{
-            	    let ttd = document.createElement("td")
+                  let ttd = document.createElement("td")
+                  ttd.classList.add("noDay")
             	    ttd.innerHTML = "/"
             	    ttr.appendChild(ttd)
           	    }
@@ -159,6 +164,9 @@ calendars(data){
          		if(cc.getDay() == 0 && g <= this.getDays(cc.getFullYear(), cc.getMonth() +1)) {
             	let ttd = document.createElement("td")
                 ttd.innerHTML = (cc.getDate()).toString()
+                if(cc.toLocaleDateString() == new Date().toLocaleDateString()){
+                  ttd.classList.add("currentDay")
+                }
                 ttd.setAttribute("ex", "true")
                 ttd.setAttribute("date", cc.toLocaleDateString())
                 ttd.onclick = this.setTask
@@ -168,7 +176,8 @@ calendars(data){
               }
           	}
             else{
-            	let ttd = document.createElement("td")
+              let ttd = document.createElement("td")
+              ttd.classList.add("noDay")
             	ttd.innerHTML = "/"
             	ttr.appendChild(ttd)
           	}

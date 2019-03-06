@@ -44,3 +44,30 @@ ion-footer {
 .button {
     background-color: steelblue;
 }
+
+table#calendar {
+
+    tr {
+        height: 40px;
+    }
+
+    td {
+        width: 60px;
+    }
+    td.currentDay {
+        background-color: #70B0E5;
+    }
+
+    tr.month {
+        background-color: steelblue;
+        color: white;
+    }
+
+    td.noDay {
+        color: lightgrey;
+    }
+
+    td:active {
+        background-color: lightskyblue;
+    }
+}

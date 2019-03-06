@@ -1,3 +1,4 @@
+import { BackofficeMenuPage } from './../backoffice/backoffice-menu/backoffice-menu';
 import { HomePage } from './../home/home';
 import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
 import { RegisterPage } from './../register/register';
@@ -36,6 +37,9 @@ export class LoginPage {
           if(data["username"]) {
             localStorage.setItem("username", data["username"])
             localStorage.setItem("privilege", data["privilege"])
+            if(localStorage.getItem("privilege") == "4")
+            this.navCtrl.setRoot(BackofficeMenuPage)
+            else
             this.navCtrl.setRoot(HomePage)
           }
         }

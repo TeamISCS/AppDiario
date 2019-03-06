@@ -1,3 +1,4 @@
+import { LoginPage } from './../../login/login';
 import { BackofficeUserPage } from './../backoffice-user/backoffice-user';
 import { BackofficeMateriaPage } from './../backoffice-materia/backoffice-materia';
 import { BackofficeClassPage } from './../backoffice-class/backoffice-class';
@@ -33,5 +34,18 @@ export class BackofficeMenuPage {
   }
   classe(){
     this.navCtrl.push(BackofficeClassPage)
+  }
+
+  logout() {
+    localStorage.removeItem("jwt")
+    localStorage.setItem("logged", "false")
+    localStorage.removeItem("username")
+    localStorage.removeItem("name")
+    localStorage.removeItem("surname")
+    localStorage.removeItem("birth_place")
+    localStorage.removeItem("classroom")
+    localStorage.removeItem("CF")
+    localStorage.removeItem("gender")
+    this.navCtrl.setRoot(LoginPage)
   }
 }

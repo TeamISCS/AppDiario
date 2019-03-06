@@ -54,7 +54,12 @@ export class LoginPage {
 
   ionViewDidLoad(){
     if(localStorage.getItem('logged') == "true"){
-      this.navCtrl.setRoot(HomePage)
+      if(localStorage.getItem("privilege") == "4") {
+        this.navCtrl.setRoot(BackofficeMenuPage)
+      }
+      else {
+        this.navCtrl.setRoot(HomePage)
+      }
     }
   }
 }

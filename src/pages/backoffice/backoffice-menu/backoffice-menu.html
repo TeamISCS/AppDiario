@@ -6,55 +6,56 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>backoffice-menu</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <ion-title>backoffice-menu</ion-title>
+    </ion-navbar>
 
-</ion-header>
-
-
-<ion-content padding>
+  </ion-header>
 
 
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-icon class="a" name="person-add" (click)="utente()"></ion-icon>
-          </ion-col>
-          <ion-col>
-            <ion-icon class="a" name="school" (click)="materia()"></ion-icon>
-          </ion-col>
-        </ion-row>
+  <ion-content padding>
 
-        <ion-row>
-          <ion-col>
-              <button class="b" ion-button (click)="utente()">utente</button>
-          </ion-col>
-          <ion-col>
-              <button class="c" ion-button (click)="materia()">materia</button>
-          </ion-col>
-        </ion-row>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="b">
 
-        <ion-row>
-          <ion-col>
-              <ion-icon class="a" name="people" (click)="classe()"></ion-icon>
-          </ion-col>
-          <ion-col>
+            <ion-icon class="a" name="person-add" (click)="utente()" ></ion-icon>
 
-          </ion-col>
-        </ion-row>
+            </ion-col>
+            <ion-col class="b">
+              <ion-icon class="a" name="school" (click)="materia()"></ion-icon>
+            </ion-col>
+          </ion-row>
 
-        <ion-row>
-            <ion-col>
-                <button ion-button (click)="classe()">classe</button>
+          <ion-row>
+            <ion-col  class="b">
+                <button  ion-button (click)="utente()">utente</button>
+            </ion-col>
+            <ion-col class="b">
+                <button  ion-button (click)="materia()">materia</button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col class="b">
+                <ion-icon class="a" name="people" (click)="classe()"></ion-icon>
             </ion-col>
             <ion-col>
 
             </ion-col>
-        </ion-row>
+          </ion-row>
 
-        <button ion-button type="submit" (click)="logout()">Logout</button>
+          <ion-row>
+              <ion-col class="b">
+                  <button ion-button (click)="classe()">classe</button>
+              </ion-col>
+              <ion-col>
+
+              </ion-col>
+          </ion-row>
+
+          <button ion-button type="submit" (click)="logout()">Logout</button>
 
 
-    </ion-grid>
-</ion-content>
+      </ion-grid>
+  </ion-content>

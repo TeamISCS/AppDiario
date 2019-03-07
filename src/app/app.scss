@@ -21,9 +21,9 @@ ion-header {
 
 .toolbar-background {
     background-color: steelblue;
-    
+
 }
-  
+
 ion-title {
     .toolbar-title {
         font-size: 30px;
@@ -31,12 +31,12 @@ ion-title {
     }
 }
 ion-navbar {
-    
+
     height: 100%;
 }
 
 ion-footer {
-    
+
     height: $footerHeight;
     background-color: steelblue
 }

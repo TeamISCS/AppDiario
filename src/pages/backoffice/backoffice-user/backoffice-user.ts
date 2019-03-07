@@ -81,12 +81,24 @@ export class BackofficeUserPage {
         document.getElementById("gg").style.display = "block"
         document.getElementById("gg").style.color = "black"
         document.getElementById("gg").innerHTML = "L'utente è stato aggiunto con successo"
+        this.user.value = null
+        this.pass.value = null
+        this.nome.value = null
+        this.cognome.value = null
+        this.luogo.value = null
+        this.cf.value = null
+        this.gender.value = null
+        this.privilegio.value = null
       }
     },
     error => {
       console.log("errore")
     })
   }
+  }
+
+  cancella(){
+
   }
 
 }

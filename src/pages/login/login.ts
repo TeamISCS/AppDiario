@@ -33,10 +33,10 @@ export class LoginPage {
       else {
         console.log(data)
         if(data["username"]) {
-          localStorage.setItem("logged", "true");
-          localStorage.setItem("username", data["username"])
-          localStorage.setItem("privilege", data["privilege"])
-          if(localStorage.getItem("privilege") == "4") {
+          sessionStorage.setItem("logged", "true");
+          sessionStorage.setItem("username", data["username"])
+          sessionStorage.setItem("privilege", data["privilege"])
+          if(sessionStorage.getItem("privilege") == "4") {
             this.navCtrl.setRoot(BackofficeMenuPage)
           }
           else {
@@ -53,8 +53,8 @@ export class LoginPage {
   }
 
   ionViewDidLoad(){
-    if(localStorage.getItem('logged') == "true"){
-      if(localStorage.getItem("privilege") == "4") {
+    if(sessionStorage.getItem('logged') == "true"){
+      if(sessionStorage.getItem("privilege") == "4") {
         this.navCtrl.setRoot(BackofficeMenuPage)
       }
       else {

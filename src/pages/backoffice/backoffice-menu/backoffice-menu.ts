@@ -37,15 +37,15 @@ export class BackofficeMenuPage {
   }
 
   logout() {
-    localStorage.removeItem("jwt")
-    localStorage.setItem("logged", "false")
-    localStorage.removeItem("username")
-    localStorage.removeItem("name")
-    localStorage.removeItem("surname")
-    localStorage.removeItem("birth_place")
-    localStorage.removeItem("classroom")
-    localStorage.removeItem("CF")
-    localStorage.removeItem("gender")
+    sessionStorage.removeItem("jwt")
+    sessionStorage.setItem("logged", "false")
+    sessionStorage.removeItem("username")
+    sessionStorage.removeItem("name")
+    sessionStorage.removeItem("surname")
+    sessionStorage.removeItem("birth_place")
+    sessionStorage.removeItem("classroom")
+    sessionStorage.removeItem("CF")
+    sessionStorage.removeItem("gender")
     this.navCtrl.setRoot(LoginPage)
   }
 }

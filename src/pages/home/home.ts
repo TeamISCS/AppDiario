@@ -22,7 +22,7 @@ export class HomePage {
 
   ionViewWillEnter(){
     document.getElementById("welcome").innerHTML =
-      `Benvenuto ${localStorage.getItem('name')} ${localStorage.getItem('surname')}`
+      `Benvenuto ${sessionStorage.getItem('name')} ${sessionStorage.getItem('surname')}`
 
 	  let today = new Date()
 		  for(let i = 0; i < this.monthsy.length; i++){
@@ -34,40 +34,40 @@ export class HomePage {
 
 
   ionViewDidLoad() {
-    if(localStorage.getItem("logged") == "true") {
-      if(localStorage.getItem("name") == null){
-        if(localStorage.getItem("privilege") == "1") {
-          this.api.get(`/api/student/info/${localStorage.getItem("username")}`)
+    if(sessionStorage.getItem("logged") == "true") {
+      if(sessionStorage.getItem("name") == null){
+        if(sessionStorage.getItem("privilege") == "1") {
+          this.api.get(`/api/student/info/${sessionStorage.getItem("username")}`)
           .subscribe(student => {
             console.log(student)
-            localStorage.setItem("name", student["name"]);
-            localStorage.setItem("surname", student["surname"])
-            localStorage.setItem("CF", student["CF"])
-            localStorage.setItem("birth_place", student["birth_place"])
-            localStorage.setItem("gender", student["gender"])
+            sessionStorage.setItem("name", student["name"]);
+            sessionStorage.setItem("surname", student["surname"])
+            sessionStorage.setItem("CF", student["CF"])
+            sessionStorage.setItem("birth_place", student["birth_place"])
+            sessionStorage.setItem("gender", student["gender"])
           
           })
         }
-        else if(localStorage.getItem("privilege") == "2") {
-          this.api.get(`/api/parent/info/${localStorage.getItem("username")}`)
+        else if(sessionStorage.getItem("privilege") == "2") {
+          this.api.get(`/api/parent/info/${sessionStorage.getItem("username")}`)
           .subscribe(parent => {
             console.log(parent)
-            localStorage.setItem("name", parent["name"]);
-            localStorage.setItem("surname", parent["surname"])
-            localStorage.setItem("CF", parent["CF"])
-            localStorage.setItem("birth_place", parent["birth_place"])
-            localStorage.setItem("gender", parent["gender"])
+            sessionStorage.setItem("name", parent["name"]);
+            sessionStorage.setItem("surname", parent["surname"])
+            sessionStorage.setItem("CF", parent["CF"])
+            sessionStorage.setItem("birth_place", parent["birth_place"])
+            sessionStorage.setItem("gender", parent["gender"])
           })
         }
-        else if(localStorage.getItem("privilege") == "3") {
-          this.api.get(`/api/teacher/info/${localStorage.getItem("username")}`)
+        else if(sessionStorage.getItem("privilege") == "3") {
+          this.api.get(`/api/teacher/info/${sessionStorage.getItem("username")}`)
           .subscribe(teacher => {
             console.log(teacher)
-            localStorage.setItem("name", teacher["name"]);
-            localStorage.setItem("surname", teacher["surname"])
-            localStorage.setItem("CF", teacher["CF"])
-            localStorage.setItem("birth_place", teacher["birth_place"])
-            localStorage.setItem("gender", teacher["gender"])
+            sessionStorage.setItem("name", teacher["name"]);
+            sessionStorage.setItem("surname", teacher["surname"])
+            sessionStorage.setItem("CF", teacher["CF"])
+            sessionStorage.setItem("birth_place", teacher["birth_place"])
+            sessionStorage.setItem("gender", teacher["gender"])
           })
         }
       }
@@ -79,15 +79,15 @@ export class HomePage {
 
 
   logout() {
-    localStorage.removeItem("jwt")
-    localStorage.setItem("logged", "false")
-    localStorage.removeItem("username")
-    localStorage.removeItem("name")
-    localStorage.removeItem("surname")
-    localStorage.removeItem("birth_place")
-    localStorage.removeItem("classroom")
-    localStorage.removeItem("CF")
-    localStorage.removeItem("gender")
+    sessionStorage.removeItem("jwt")
+    sessionStorage.setItem("logged", "false")
+    sessionStorage.removeItem("username")
+    sessionStorage.removeItem("name")
+    sessionStorage.removeItem("surname")
+    sessionStorage.removeItem("birth_place")
+    sessionStorage.removeItem("classroom")
+    sessionStorage.removeItem("CF")
+    sessionStorage.removeItem("gender")
     this.navCtrl.setRoot(LoginPage)
   }
 

@@ -34,13 +34,13 @@ export class UserPage {
   getUser(){
 
     let data = {
-      name: localStorage.getItem("name"),
-      surname: localStorage.getItem("surname"),
-      gender: localStorage.getItem("gender"),
-      ldn: localStorage.getItem("birth_place"),
-      classroom: localStorage.getItem("classroom"),
-      username: localStorage.getItem("username"),
-      CF: localStorage.getItem("CF")
+      name: sessionStorage.getItem("name"),
+      surname: sessionStorage.getItem("surname"),
+      gender: sessionStorage.getItem("gender"),
+      ldn: sessionStorage.getItem("birth_place"),
+      classroom: sessionStorage.getItem("classroom"),
+      username: sessionStorage.getItem("username"),
+      CF: sessionStorage.getItem("CF")
     }
 
     this.generaUser(data)

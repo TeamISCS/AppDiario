@@ -1,3 +1,6 @@
+import { BackofficeParentPage } from './../backoffice-parent/backoffice-parent';
+import { BackofficeTeacherPage } from './../backoffice-teacher/backoffice-teacher';
+import { BackofficeStudentPage } from './../backoffice-student/backoffice-student';
 import { LoginPage } from './../../login/login';
 import { BackofficeUserPage } from './../backoffice-user/backoffice-user';
 import { BackofficeMateriaPage } from './../backoffice-materia/backoffice-materia';
@@ -26,8 +29,14 @@ export class BackofficeMenuPage {
     console.log('ionViewDidLoad BackofficeMenuPage');
   }
 
-  utente(){
-    this.navCtrl.push(BackofficeUserPage)
+  student(){
+    this.navCtrl.push(BackofficeStudentPage)
+  }
+  teacher(){
+    this.navCtrl.push(BackofficeTeacherPage)
+  }
+  parent(){
+    this.navCtrl.push(BackofficeParentPage)
   }
   materia(){
     this.navCtrl.push(BackofficeMateriaPage)

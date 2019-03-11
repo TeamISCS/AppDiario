@@ -1,3 +1,6 @@
+import { BackofficeParentPage } from './../pages/backoffice/backoffice-parent/backoffice-parent';
+import { BackofficeTeacherPage } from './../pages/backoffice/backoffice-teacher/backoffice-teacher';
+import { BackofficeStudentPage } from './../pages/backoffice/backoffice-student/backoffice-student';
 
 
 import { TaskPage } from './../pages/task/task';
@@ -34,7 +37,10 @@ import { SettingTaskPage } from '../pages/setting-task/setting-task';
     UserPage,
     TaskPage,
     SearchPage,
-    SettingTaskPage
+    SettingTaskPage,
+    BackofficeStudentPage,
+    BackofficeTeacherPage,
+    BackofficeParentPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,10 @@ import { SettingTaskPage } from '../pages/setting-task/setting-task';
     UserPage,
     TaskPage,
     SearchPage,
-    SettingTaskPage
+    SettingTaskPage,
+    BackofficeStudentPage,
+    BackofficeTeacherPage,
+    BackofficeParentPage
   ],
   providers: [
     StatusBar,

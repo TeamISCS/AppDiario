@@ -1,22 +1,15 @@
-import { DiarioApiProvider } from './../../../../providers/diario-api/diario-api';
+import { StudentOptions } from './../student-options';
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the BackofficeStudentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-backoffice-student',
-  templateUrl: 'backoffice-student.html',
+  selector: 'page-student-add',
+  templateUrl: 'student-add.html',
 })
-export class BackofficeStudentPage {
+export class StudentAdd {
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
+  constructor(public navCtrl: NavController, public options: StudentOptions) {
   }
 
   @ViewChild('username') user: HTMLInputElement
@@ -60,7 +53,7 @@ export class BackofficeStudentPage {
     this.data.birth_place=this.luogo.value;
     this.data.cf=this.cf.value;
     this.data.gender=this.gender.value;
-    this.api.post('api/user/add', this.data)
+    this.options.add(this.data)
     .subscribe(data => {
       console.log(data)
       if(data['status']=='added'){
@@ -82,10 +75,5 @@ export class BackofficeStudentPage {
   }
   }
 
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BackofficeStudentPage');
-  }
 
 }

@@ -9,7 +9,7 @@ import { IonicPage, NavController } from 'ionic-angular';
   selector: 'page-matter-add',
   templateUrl: 'matter-add.html',
 })
-export class MatterAddPage {
+export class MatterAdd {
 
   @ViewChild('materia') materia: HTMLInputElement
 

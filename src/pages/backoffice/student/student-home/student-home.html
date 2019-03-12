@@ -1,0 +1,25 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Student</ion-title>
+    </ion-navbar>
+
+  </ion-header>
+
+
+  <ion-content padding>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="person-add"></ion-icon>
+          <button ion-button (click)="addStudent()">+Student</button>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="person"></ion-icon>
+          <button ion-button (click)="removeStudent()">-Student</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-content>

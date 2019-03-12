@@ -1,22 +1,16 @@
-import { DiarioApiProvider } from './../../../../providers/diario-api/diario-api';
+import { TeacherOptions } from './../teacher-options';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the BackofficeTeacherPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
-  selector: 'page-backoffice-teacher',
-  templateUrl: 'backoffice-teacher.html',
+  selector: 'page-teacher-add',
+  templateUrl: 'teacher-add.html',
 })
-export class BackofficeTeacherPage {
+export class TeacherAdd {
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
+  constructor(public navCtrl: NavController, public options: TeacherOptions) {
   }
   @ViewChild('username') user: HTMLInputElement
   @ViewChild('password') pass: HTMLInputElement
@@ -59,7 +53,7 @@ export class BackofficeTeacherPage {
     this.data.birth_place=this.luogo.value;
     this.data.cf=this.cf.value;
     this.data.gender=this.gender.value;
-    this.api.post('api/user/add', this.data)
+    this.options.add(this.data)
     .subscribe(data => {
       console.log(data)
       if(data['status']=='added'){

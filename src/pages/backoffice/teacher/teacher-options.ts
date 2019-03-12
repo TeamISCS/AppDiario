@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 
 
 @Injectable()
-export class ParentOptions {
+export class TeacherOptions {
 
     constructor(public api: Api) {}
 
 
     add(data) {
-        return this.api.add("/api/parent/add", data)        
+        return this.api.add("/api/teacher/add", data)        
     }
 
 

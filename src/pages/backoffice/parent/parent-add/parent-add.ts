@@ -1,4 +1,4 @@
-import { ParentOptins } from './../parent-options';
+import { ParentOptions } from './../parent-options';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -6,11 +6,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-parent-add',
-  templateUrl: 'parenta-add.html',
+  templateUrl: 'parent-add.html',
 })
 export class ParentAdd {
 
-  constructor(public navCtrl: NavController, public options: ParentOptins) {
+  constructor(public navCtrl: NavController, public options: ParentOptions) {
   }
   @ViewChild('username') user: HTMLInputElement
   @ViewChild('password') pass: HTMLInputElement

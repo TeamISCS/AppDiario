@@ -1,5 +1,5 @@
+import { StudentHome } from './../student/student-home/student-home';
 
-import { BackofficeStudentPage } from './../student/backoffice-student/backoffice-student';
 import { LoginPage } from './../../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -15,14 +15,9 @@ export class BackofficeMenuPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  goToStudent(){
-    this.navCtrl.setRoot(BackofficeStudentPage)
-  }
-
-
-  goToBackoffice() {
-    
-  }
+goToStudent() {
+  this.navCtrl.setRoot(StudentHome)
+}
 
   logout() {
     sessionStorage.removeItem("jwt")

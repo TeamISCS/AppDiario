@@ -1,5 +1,8 @@
+import { ParentOptions } from './../pages/backoffice/parent/parent-options';
+import { TeacherAdd } from './../pages/backoffice/teacher/teacher-add/teacher-add';
+import { ParentAdd } from './../pages/backoffice/parent/parent-add/parent-add';
 import { MatterOptions } from './../pages/backoffice/matter/matter-options';
-import { MatterAddPage } from './../pages/backoffice/matter/matter-add/matter-add';
+import { MatterAdd } from './../pages/backoffice/matter/matter-add/matter-add';
 import { ClassroomAdd } from './../pages/backoffice/classroom/classroom-add/classroom-add';
 import { ClassroomOptions } from './../pages/backoffice/classroom/classroom-options';
 import { Api } from './../providers/api/api';
@@ -19,6 +22,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DiarioApiProvider } from '../providers/diario-api/diario-api';
 import { SearchPage } from '../pages/search/search';
 import { SettingTaskPage } from '../pages/setting-task/setting-task';
+import { StudentAdd } from '../pages/backoffice/student/student-add/student-add';
+import { StudentHome } from '../pages/backoffice/student/student-home/student-home';
+import { StudentOptions } from '../pages/backoffice/student/student-options';
+import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
 
 
 @NgModule({
@@ -32,8 +39,12 @@ import { SettingTaskPage } from '../pages/setting-task/setting-task';
     SearchPage,
     SettingTaskPage,
     ClassroomAdd,
-    MatterAddPage,
-    BackofficeMenuPage
+    MatterAdd,
+    StudentAdd,
+    ParentAdd,
+    TeacherAdd,
+    BackofficeMenuPage,
+    StudentHome
   ],
   imports: [
     BrowserModule,
@@ -51,8 +62,12 @@ import { SettingTaskPage } from '../pages/setting-task/setting-task';
     SearchPage,
     SettingTaskPage,
     ClassroomAdd,
-    MatterAddPage,
-    BackofficeMenuPage
+    MatterAdd,
+    StudentAdd,
+    ParentAdd,
+    TeacherAdd,
+    BackofficeMenuPage,
+    StudentHome
   ],
   providers: [
     StatusBar,
@@ -61,7 +76,10 @@ import { SettingTaskPage } from '../pages/setting-task/setting-task';
     DiarioApiProvider,
     Api,
     ClassroomOptions,
-    MatterOptions
+    MatterOptions,
+    StudentOptions,
+    TeacherOptions,
+    ParentOptions
   ]
 })
 export class AppModule {}

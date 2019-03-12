@@ -1,13 +1,14 @@
+import { ParentAdd } from './parent-add';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { BackofficeParentPage } from './backoffice-parent';
+
 
 @NgModule({
   declarations: [
-    BackofficeParentPage,
+    ParentAdd,
   ],
   imports: [
-    IonicPageModule.forChild(BackofficeParentPage),
+    IonicPageModule.forChild(ParentAdd),
   ],
 })
 export class BackofficeParentPageModule {}

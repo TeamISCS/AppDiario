@@ -1,9 +1,9 @@
-import { DiarioApiProvider } from './../../../providers/diario-api/diario-api';
+import { DiarioApiProvider } from './../../../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the BackofficeUserPage page.
+ * Generated class for the BackofficeTeacherPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,14 +11,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-backoffice-user',
-  templateUrl: 'backoffice-user.html',
+  selector: 'page-backoffice-teacher',
+  templateUrl: 'backoffice-teacher.html',
 })
-export class BackofficeUserPage {
+export class BackofficeTeacherPage {
 
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
-
   @ViewChild('username') user: HTMLInputElement
   @ViewChild('password') pass: HTMLInputElement
   @ViewChild('nome') nome: HTMLInputElement
@@ -26,9 +25,6 @@ export class BackofficeUserPage {
   @ViewChild('luogo') luogo: HTMLInputElement
   @ViewChild('cf') cf: HTMLInputElement
   @ViewChild('gender') gender: HTMLSelectElement
-  @ViewChild('privilegio') privilegio: HTMLSelectElement
-
-
 
   data = {
     "username": "",
@@ -38,13 +34,13 @@ export class BackofficeUserPage {
     "birth_place": "",
     "cf": "",
     "gender":"",
-    "privilege": ""
- }
+    "privilege":"2"
+  }
 
   register() {
     console.log(this.cognome.value)
 
-    if(!this.cf.value ||!this.nome.value ||!this.user.value ||!this.pass.value  ||!this.cognome.value ||!this.luogo.value  ||!this.privilegio.value ||!this.gender.value ){
+    if(!this.cf.value ||!this.nome.value ||!this.user.value ||!this.pass.value  ||!this.cognome.value ||!this.luogo.value  ||!this.gender.value ){
       document.getElementById("gg").style.display = "block"
       document.getElementById("gg").innerHTML = "C'è un campo vuoto"
     }
@@ -63,17 +59,6 @@ export class BackofficeUserPage {
     this.data.birth_place=this.luogo.value;
     this.data.cf=this.cf.value;
     this.data.gender=this.gender.value;
-
-    if(this.privilegio.value == "studente")
-    this.data.privilege="1";
-    else if(this.privilegio.value == "genitore")
-    this.data.privilege="2";
-    else if(this.privilegio.value == "docente")
-    this.data.privilege="3";
-    else if(this.privilegio.value == "backoffice")
-    this.data.privilege="4"
-
-
     this.api.post('api/user/add', this.data)
     .subscribe(data => {
       console.log(data)
@@ -88,7 +73,6 @@ export class BackofficeUserPage {
         this.luogo.value = null
         this.cf.value = null
         this.gender.value = null
-        this.privilegio.value = null
       }
     },
     error => {
@@ -97,8 +81,9 @@ export class BackofficeUserPage {
   }
   }
 
-  cancella(){
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad BackofficeTeacherPage');
   }
 
 }

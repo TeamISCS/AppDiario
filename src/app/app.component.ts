@@ -1,8 +1,5 @@
-
+import { ClassroomAddPage } from './../pages/backoffice/classroom/classroom-add/classroom-add';
 import { HomePage } from './../pages/home/home';
-import { BackofficeMenuPage } from './../pages/backoffice/backoffice-menu/backoffice-menu';
-import { BackofficeMateriaPage } from './../pages/backoffice/backoffice-materia/backoffice-materia';
-import { BackofficeClassPage } from './../pages/backoffice/backoffice-class/backoffice-class';
 import { LoginPage } from './../pages/login/login';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
@@ -12,7 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = ClassroomAddPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

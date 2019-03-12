@@ -15,69 +15,41 @@
 
   <ion-content padding>
 
-        <ion-grid>
-          <ion-row>
-            <ion-col class="b">
 
-            <ion-icon class="a" name="person-add" (click)="student()" ></ion-icon>
-
-            </ion-col>
-            <ion-col class="b">
-              <ion-icon class="a" name="person-add" (click)="teacher()"></ion-icon>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
-            <ion-col  class="b">
-                <button  ion-button (click)="student()">+ studente</button>
-            </ion-col>
-            <ion-col class="b">
-                <button  ion-button (click)="teacher()">+ professore</button>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
-            <ion-col class="b">
-                <ion-icon class="a" name="person-add" (click)="this.parent()"></ion-icon>
-            </ion-col>
-            <ion-col>
-              <ion-col class="b">
-                <ion-icon class="a" name="person-add" (click)="backoffice()"></ion-icon>
-              </ion-col>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
-              <ion-col class="b">
-                  <button ion-button (click)="parent()">+ genitore</button>
-              </ion-col>
-              <ion-col class="b">
-                <button  ion-button (click)="backoffice()">+ backoffice</button>
-              </ion-col>
-          </ion-row>
-
-          <ion-row>
-            <ion-col class="b">
-                <ion-icon class="a" name="people" (click)="classe()"></ion-icon>
-            </ion-col>
-            <ion-col>
-              <ion-col class="b">
-                <ion-icon class="a" name="school" (click)="materia()"></ion-icon>
-              </ion-col>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
-              <ion-col class="b">
-                  <button ion-button (click)="classe()">classe</button>
-              </ion-col>
-              <ion-col class="b">
-                <button  ion-button (click)="materia()">materia</button>
-              </ion-col>
-          </ion-row>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="person"></ion-icon>
+          <button ion-button (click)="goToStudent()">Student</button>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="person"></ion-icon>
+          <button ion-button (click)="goToTeacher()">Teacher</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="person"></ion-icon>
+          <button ion-button (click)="goToParent()">Parent</button>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="person"></ion-icon>
+          <button ion-button (click)="goToBackoffice()">Backoffice</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="people"></ion-icon>
+          <button ion-button (click)="goToClassroom()">Class</button>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="school"></ion-icon>
+          <button ion-button (click)="goToMatter()">Materia</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
           <button ion-button type="submit" (click)="logout()">Logout</button>
 
 
-      </ion-grid>
   </ion-content>

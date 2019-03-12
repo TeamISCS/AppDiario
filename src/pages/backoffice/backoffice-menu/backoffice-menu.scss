@@ -1,31 +1,25 @@
 page-backoffice-menu {
 
 }
-.col{
 
-}
-.b{
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 30%;
+.row {
+  height: 25%;
 }
 
-.a{
-  padding: 20px;
+
+.icon{
   text-align: center;
   color: steelblue;
   zoom:2;
+  display: block;
 }
 
-.button{
-  width: 70%;
+.button {
+  display: block;
+  width: 100%;
   padding:16px;
 }
 
-/*.b{
-
+.grid {
+  height: calc(3 * 25%);
 }
-
-.c{
-  left: 50px;
-}*/

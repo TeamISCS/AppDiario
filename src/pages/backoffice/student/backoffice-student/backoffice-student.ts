@@ -1,9 +1,9 @@
-import { DiarioApiProvider } from './../../../providers/diario-api/diario-api';
+import { DiarioApiProvider } from './../../../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the BackofficeTeacherPage page.
+ * Generated class for the BackofficeStudentPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,13 +11,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-backoffice-teacher',
-  templateUrl: 'backoffice-teacher.html',
+  selector: 'page-backoffice-student',
+  templateUrl: 'backoffice-student.html',
 })
-export class BackofficeTeacherPage {
+export class BackofficeStudentPage {
 
   constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
   }
+
   @ViewChild('username') user: HTMLInputElement
   @ViewChild('password') pass: HTMLInputElement
   @ViewChild('nome') nome: HTMLInputElement
@@ -34,7 +35,7 @@ export class BackofficeTeacherPage {
     "birth_place": "",
     "cf": "",
     "gender":"",
-    "privilege":"2"
+    "privilege":"1"
   }
 
   register() {
@@ -82,8 +83,9 @@ export class BackofficeTeacherPage {
   }
 
 
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BackofficeTeacherPage');
+    console.log('ionViewDidLoad BackofficeStudentPage');
   }
 
 }

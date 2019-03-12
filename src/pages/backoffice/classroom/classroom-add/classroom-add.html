@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Inserisci classe</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <p id="sms" style="display: block; color: red"></p>
+
+
+    <ion-list>
+        <ion-item>
+            <ion-input placeholder="classe" type="text" name="classe" #classe></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="sezione" type="text" name="sezione" #sezione></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Articolazione</ion-label>
+            <ion-checkbox checked [(ngModel)]="art"></ion-checkbox>
+        </ion-item>
+        <ion-item *ngIf="art" >
+            <ion-input placeholder="Articolazione" type="text" name="art" #art></ion-input>
+        </ion-item>
+
+        <input type="submit" value="Aggiungi" (click)="addClassroom()">
+
+    </ion-list>
+
+</ion-content>

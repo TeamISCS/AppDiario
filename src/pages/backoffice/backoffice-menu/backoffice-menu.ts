@@ -1,19 +1,9 @@
-import { BackofficeParentPage } from './../backoffice-parent/backoffice-parent';
-import { BackofficeTeacherPage } from './../backoffice-teacher/backoffice-teacher';
-import { BackofficeStudentPage } from './../backoffice-student/backoffice-student';
+
+import { BackofficeStudentPage } from './../student/backoffice-student/backoffice-student';
 import { LoginPage } from './../../login/login';
-import { BackofficeUserPage } from './../backoffice-user/backoffice-user';
-import { BackofficeMateriaPage } from './../backoffice-materia/backoffice-materia';
-import { BackofficeClassPage } from './../backoffice-class/backoffice-class';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the BackofficeMenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -25,24 +15,13 @@ export class BackofficeMenuPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BackofficeMenuPage');
+  goToStudent(){
+    this.navCtrl.setRoot(BackofficeStudentPage)
   }
 
-  student(){
-    this.navCtrl.push(BackofficeStudentPage)
-  }
-  teacher(){
-    this.navCtrl.push(BackofficeTeacherPage)
-  }
-  parent(){
-    this.navCtrl.push(BackofficeParentPage)
-  }
-  materia(){
-    this.navCtrl.push(BackofficeMateriaPage)
-  }
-  classe(){
-    this.navCtrl.push(BackofficeClassPage)
+
+  goToBackoffice() {
+    
   }
 
   logout() {

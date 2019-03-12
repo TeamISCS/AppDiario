@@ -10,4 +10,4 @@ import { StudentHome } from './student-home';
     IonicPageModule.forChild(StudentHome),
   ],
 })
-export class StudentHomePageModule {}
+export class StudentHomeModule {}

@@ -10,4 +10,4 @@ import { ParentAdd } from './parent-add';
     IonicPageModule.forChild(ParentAdd),
   ],
 })
-export class ParentAddPageModule {}
+export class ParentAddModule {}

@@ -10,4 +10,4 @@ import { MatterAdd } from './matter-add';
     IonicPageModule.forChild(MatterAdd),
   ],
 })
-export class MatterAddPageModule {}
+export class MatterAddModule {}

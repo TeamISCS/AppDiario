@@ -10,4 +10,4 @@ import { ClassroomAdd } from './classroom-add';
     IonicPageModule.forChild(ClassroomAdd),
   ],
 })
-export class ClassroomAddPageModule {}
+export class ClassroomAddModule {}

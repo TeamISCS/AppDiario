@@ -3,8 +3,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
 
-
-@IonicPage()
 @Component({
   selector: 'page-matter-add',
   templateUrl: 'matter-add.html',

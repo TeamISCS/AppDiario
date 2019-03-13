@@ -3,7 +3,6 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
-@IonicPage()
 @Component({
   selector: 'page-teacher-add',
   templateUrl: 'teacher-add.html',

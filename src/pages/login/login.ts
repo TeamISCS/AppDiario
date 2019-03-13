@@ -1,4 +1,4 @@
-import { BackofficeMenuPage } from './../backoffice/backoffice-menu/backoffice-menu';
+import { BackofficeMenu } from './../backoffice/backoffice-menu/backoffice-menu';
 import { HomePage } from './../home/home';
 import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
@@ -37,7 +37,7 @@ export class LoginPage {
           sessionStorage.setItem("username", data["username"])
           sessionStorage.setItem("privilege", data["privilege"])
           if(sessionStorage.getItem("privilege") == "4") {
-            this.navCtrl.setRoot(BackofficeMenuPage)
+            this.navCtrl.setRoot(BackofficeMenu)
           }
           else {
             this.navCtrl.setRoot(HomePage)
@@ -55,7 +55,7 @@ export class LoginPage {
   ionViewDidLoad(){
     if(sessionStorage.getItem('logged') == "true"){
       if(sessionStorage.getItem("privilege") == "4") {
-        this.navCtrl.setRoot(BackofficeMenuPage)
+        this.navCtrl.setRoot(BackofficeMenu)
       }
       else {
         this.navCtrl.setRoot(HomePage)

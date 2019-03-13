@@ -1,8 +1,9 @@
 import { ClassroomOptions } from './../classroom-options';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { ClassroomHome } from '../classroom-menu/classroom-home';
 
-@IonicPage()
+
 @Component({
   selector: 'page-classroom-add',
   templateUrl: 'classroom-add.html',
@@ -20,7 +21,9 @@ export class ClassroomAdd {
     "art": null
   }
 
-
+goHome(){
+  this.navCtrl.setRoot(ClassroomHome)
+}
   addClassroom() {
 
     if (!this.classe.value || !this.sezione.value) {

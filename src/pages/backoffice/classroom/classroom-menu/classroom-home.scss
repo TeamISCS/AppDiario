@@ -1,0 +1,46 @@
+page-classroom-menu {
+    
+}
+
+ion-title {
+    .toolbar-title {
+        
+        display: flex;
+        
+          div.title {
+            flex: 3;
+          }
+          div.empty {
+            flex: 1;
+          }
+
+          div.back {
+            flex: 1;
+
+            .icon {
+                color: white;
+                zoom: 1.2;
+            }
+          }
+    }
+}
+
+.item {
+    font-size: 25px;
+}
+
+.divicon {
+    flex: 1
+}
+
+.divtitle {
+    flex: 4
+}
+
+.divlist {
+    display: block;
+}
+
+.divitem {
+    display: flex
+}

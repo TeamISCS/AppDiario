@@ -25,9 +25,14 @@ ion-header {
 }
 
 ion-title {
+
+    height: 100%;
+
     .toolbar-title {
         font-size: 30px;
         color: white;
+        padding: 0px !important;
+        
     }
 }
 ion-navbar {
@@ -71,3 +76,4 @@ table#calendar {
         background-color: lightskyblue;
     }
 }
+

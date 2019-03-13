@@ -1,3 +1,4 @@
+import { StudentHomeModule } from './../pages/backoffice/student/student-home/student-home.module';
 import { ClassroomHome } from './../pages/backoffice/classroom/classroom-menu/classroom-home';
 import { ParentOptions } from './../pages/backoffice/parent/parent-options';
 import { TeacherAdd } from './../pages/backoffice/teacher/teacher-add/teacher-add';
@@ -44,14 +45,13 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
     ParentAdd,
     TeacherAdd,
     BackofficeMenu,
-    StudentAdd,
-    StudentHome,
     ClassroomHome
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    StudentHomeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,8 +68,6 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
     ParentAdd,
     TeacherAdd,
     BackofficeMenu,
-    StudentAdd,
-    StudentHome,
     ClassroomHome
   ],
   providers: [

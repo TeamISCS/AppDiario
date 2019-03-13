@@ -1,0 +1,66 @@
+page-student-search {
+
+}
+
+.student {
+    display: flex;
+
+    .labelname {
+        flex: 4;
+        font-size: 20px;
+        text-align: left;
+    }
+
+
+    .zz {
+        flex: 1;
+        background-color: steelblue;
+    }
+
+    border-top: 1px solid lightslategray;
+    border-bottom: 1px solid lightslategrey;
+}
+
+
+div#search {
+    height: 35px;
+    width: 70%;
+    display: flex;
+    border: 2px solid steelblue;
+    border-radius: 5px 5px;
+
+    div#text {
+        flex: 4;
+        height: 100%;
+        width: 100%;
+        border-right: 1px solid steelblue;
+
+        .text-input {
+            margin: 0px !important;
+            height: 100%;
+            width: 100%;
+            font-size: 25px;
+        }
+    }
+
+    div#icon {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        border-left: 1px solid steelblue;
+
+        .icon {
+            color: steelblue !important;
+            zoom: 1;
+        }
+    }
+
+    div#icon:active {
+        background-color: steelblue;
+        .icon {
+            color: white !important;
+        }
+    }
+}
+
+

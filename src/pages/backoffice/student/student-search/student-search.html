@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <div class="back" (click)="goHome()">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </div>
+      <div class="title">Search</div>
+      <div class="empty"></div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div id="search" center>
+    <div id="text">
+      <ion-input type="text" #inputsearch></ion-input>
+    </div>
+    <div id="icon" (click)="searchStudent()">
+      <ion-icon name="search"></ion-icon>
+    </div>
+  </div>
+  <div id="list">
+    <div class="student" *ngFor="let student of studentList">
+      <div class="labelname">{{student.surname}} {{student.name}}</div>
+      <button ion-button class="zz">>></button>
+    </div>
+  </div>
+
+</ion-content>

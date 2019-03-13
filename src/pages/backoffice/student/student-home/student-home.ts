@@ -1,7 +1,10 @@
+import { BackofficeMenu } from './../../backoffice-menu/backoffice-menu';
 import { StudentAdd } from './../student-add/student-add';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { StudentSearch } from '../student-search/student-search';
 
+@IonicPage()
 @Component({
   selector: 'page-student-home',
   templateUrl: 'student-home.html',
@@ -12,12 +15,30 @@ export class StudentHome {
   }
 
 
-  addStudent() {
-      this.navCtrl.setRoot(StudentAdd)
+  studentPages = [
+    {
+      "title": "Add",
+      "icon": "person-add",
+      "where": StudentAdd
+    },
+    {
+      "title": "Remove",
+      "icon": "person",
+      "where": null
+    },
+    {
+      "title": "Search",
+      "icon": "search",
+      "where": StudentSearch
+    }
+  ]
+
+  goTo(where) {
+      this.navCtrl.setRoot(where)
   }
 
-  removeStudent() {
-    //
-    //
+  goBackoffice() {
+    this.navCtrl.setRoot(BackofficeMenu)
   }
+
 }

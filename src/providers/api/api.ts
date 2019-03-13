@@ -37,4 +37,8 @@ export class Api {
     remove(pathUrl) {
         return this.http.delete((this.urlApp + pathUrl), this.httpOptions)
     }
+
+    search(pathUrl) {
+        return this.http.get((this.urlApp + pathUrl), this.httpOptions)
+    }
 }

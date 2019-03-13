@@ -1,25 +1,31 @@
 <ion-header>
 
-    <ion-navbar>
-      <ion-title>Student</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>
+      <div class="back" (click)="goBackoffice()">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </div>
+      <div class="title">Student</div>
+      <div class="empty"></div>
+    </ion-title>
+  </ion-navbar>
 
-  </ion-header>
+</ion-header>
 
 
-  <ion-content padding>
+<ion-content padding>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-icon name="person-add"></ion-icon>
-          <button ion-button (click)="addStudent()">+Student</button>
-        </ion-col>
-        <ion-col>
-          <ion-icon name="person"></ion-icon>
-          <button ion-button (click)="removeStudent()">-Student</button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <div>
+    <div class="divlist" *ngFor="let page of studentPages">
+      <div class="divitem" (click)="goTo(page.where)">
+        <div class="divicon">
+          <ion-icon name="{{page.icon}}"></ion-icon>
+        </div>
+        <div class="divtitle">
+          <ion-item>{{page.title}}</ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  </ion-content>
+</ion-content>

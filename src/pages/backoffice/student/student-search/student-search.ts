@@ -1,3 +1,4 @@
+import { StudentProfile } from './../student-profile/student-profile';
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { StudentOptions } from '../student-options';
@@ -19,6 +20,11 @@ export class StudentSearch {
 
   goHome(){
     this.navCtrl.setRoot(StudentHome)
+  }
+
+  profile(student) {
+    this.navCtrl.setRoot(StudentProfile, student)
+
   }
 
   searchStudent() {

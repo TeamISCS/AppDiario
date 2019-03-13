@@ -25,7 +25,7 @@
   <div id="list">
     <div class="student" *ngFor="let student of studentList">
       <div class="labelname">{{student.surname}} {{student.name}}</div>
-      <button ion-button class="zz">>></button>
+      <button ion-button class="zz" (click)="profile(student)">>></button>
     </div>
   </div>
 

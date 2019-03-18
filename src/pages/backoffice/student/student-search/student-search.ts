@@ -12,6 +12,7 @@ import { StudentHome } from '../student-home/student-home';
 export class StudentSearch {
 
   @ViewChild("inputsearch") input: HTMLInputElement
+  @ViewChild("by") by: HTMLSelectElement
 
   constructor(public navCtrl: NavController, public options: StudentOptions) {
   }
@@ -23,7 +24,7 @@ export class StudentSearch {
   }
 
   profile(student) {
-    this.navCtrl.setRoot(StudentProfile, student)
+    this.navCtrl.push(StudentProfile, student)
 
   }
 
@@ -32,10 +33,14 @@ export class StudentSearch {
     this.studentList.forEach(() => {
       this.studentList.pop()
     })
-    this.options.search(this.input.value)
+    this.options.search(this.input.value, this.by.value)
     .subscribe(data => {
       if(data != null){
-        this.studentList.push(data)
+        data.forEach(element => {
+          this.studentList.push(element)
+          console.log(this.studentList)
+        });
+  
       }
     })
   }

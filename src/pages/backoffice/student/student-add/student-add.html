@@ -14,24 +14,72 @@
 <ion-content padding>
 
   <p id="gg" style="display: block; color: red"></p>
+  <div id="form">
+    <table>
+      <tr>
+        <td>Username:</td>
+        <td><input #username type="text" placeholder="..."></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input #password type="password" placeholder="..."></td>
+      </tr>
+      <tr>
+        <td>Nome:</td>
+        <td><input #name type="text" placeholder="..."></td>
+      </tr>
+      <tr>
+        <td>Cognome:</td>
+        <td><input #surname type="text" placeholder="..."></td>
+      </tr>
+      <tr>
+        <td>Cod Fiscale:</td>
+        <td><input #cf type="text" placeholder="..."></td>
+      </tr>
+      <tr>
+        <td>Luogo Nascita:</td>
+        <td><input #birth_place type="text" placeholder="..."></td>
+      </tr>
+      <tr>
+        <td>Data Nascita:</td>
+        <td><input #birth_date type="text" placeholder="AAAA/MM/GG"></td>
+      </tr>
+      <tr>
+        <td>Sesso:</td>
+        <td><select #gender>
+            <option>Maschio</option>
+            <option>Femmina</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td>Classe:</td>
+        <td><input #classroom type="text" placeholder="..."></td>
+      </tr>
+      
+    </table>
 
+    <button ion-button (click)="register()">Add</button>
+  </div>
+
+  <!--
   <ion-list>
     <ion-item>
 
+      <ion-label>Username:</ion-label>
       <ion-input placeholder="Username" type="text" name="username" #username></ion-input>
 
     </ion-item>
     <ion-item>
-
+      <ion-label>Password:</ion-label>
       <ion-input placeholder="Password" type="text" name="password" #password></ion-input>
     </ion-item>
 
     <ion-item>
-
+      <ion-label>Nome:</ion-label>
       <ion-input placeholder="Nome" type="text" name="nome" #nome></ion-input>
     </ion-item>
     <ion-item>
-
+      <ion-label>Cognome:</ion-label>
       <ion-input placeholder="Cognome" type="text" name="cognome" #cognome></ion-input>
 
     </ion-item>
@@ -47,18 +95,18 @@
 
 
     <ion-item>
-
+      <ion-label>Luogo Nascita</ion-label>
       <ion-input placeholder="Luogo di nascita" type="text" name="luogo" #luogo></ion-input>
 
     </ion-item>
     <ion-item>
-
-      <ion-input placeholder="Codice fiscale" type="text" name="cf" #cf></ion-input>
+      <ion-label>Cod Fiscale</ion-label>
+      <ion-input placeholder="" type="text" name="cf" #cf></ion-input>
 
     </ion-item>
 
     <button ion-button (click)="register()">Add</button>
 
   </ion-list>
-
+-->
 </ion-content>

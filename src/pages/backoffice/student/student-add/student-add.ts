@@ -1,5 +1,5 @@
 import { StudentOptions } from './../student-options';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { StudentHome } from '../student-home/student-home';
 
@@ -13,13 +13,14 @@ export class StudentAdd {
   constructor(public navCtrl: NavController, public options: StudentOptions) {
   }
 
-  @ViewChild('username') user: HTMLInputElement
-  @ViewChild('password') pass: HTMLInputElement
-  @ViewChild('nome') nome: HTMLInputElement
-  @ViewChild('cognome') cognome: HTMLInputElement
-  @ViewChild('luogo') luogo: HTMLInputElement
-  @ViewChild('cf') cf: HTMLInputElement
-  @ViewChild('gender') gender: HTMLSelectElement
+  @ViewChild('username') user: ElementRef
+  @ViewChild('password') pass: ElementRef
+  @ViewChild('name') name: ElementRef
+  @ViewChild('surname') surname: ElementRef
+  @ViewChild('birth_place') birth_place: ElementRef
+  @ViewChild('birth_date') birth_date: ElementRef
+  @ViewChild('cf') cf: ElementRef
+  @ViewChild('gender') gender: ElementRef
 
   data = {
     "username": "",
@@ -33,8 +34,10 @@ export class StudentAdd {
   }
 
   register() {
-    console.log(this.cognome.value)
-
+    console.log(this.user.nativeElement.value)
+    console.log(this.name.nativeElement.value)
+    console.log(this.gender.nativeElement.value)
+    /*
     if (!this.cf.value || !this.nome.value || !this.user.value || !this.pass.value || !this.cognome.value || !this.luogo.value || !this.gender.value) {
       document.getElementById("gg").style.display = "block"
       document.getElementById("gg").innerHTML = "C'è un campo vuoto"
@@ -73,6 +76,7 @@ export class StudentAdd {
             console.log("errore")
           })
     }
+    */
   }
 
   goHome() {

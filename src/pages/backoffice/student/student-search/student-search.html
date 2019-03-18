@@ -14,6 +14,12 @@
 
 
 <ion-content padding>
+  <div id="by">
+    <ion-select #by value="name">
+      <ion-option value="name">Nome</ion-option>
+      <ion-option value="surname">Cognome</ion-option>
+    </ion-select>
+  </div>
   <div id="search" center>
     <div id="text">
       <ion-input type="text" #inputsearch></ion-input>
@@ -22,11 +28,41 @@
       <ion-icon name="search"></ion-icon>
     </div>
   </div>
+
   <div id="list">
+
+    <table class="list">
+      <tr class="legend">
+        <th>Cognome</th>
+        <th>Nome</th>
+        <th>Classe</th>
+        <th>Profilo</th>
+      </tr>
+      <tr *ngFor="let student of studentList" class="info">
+        <td>{{student.surname}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.classroom}}</td>
+        <td (click)="profile(student)" class="click">>></td>
+      </tr>
+    </table>
+    <!--
     <div class="student" *ngFor="let student of studentList">
-      <div class="labelname">{{student.surname}} {{student.name}}</div>
-      <button ion-button class="zz" (click)="profile(student)">>></button>
-    </div>
+
+      <table>
+        <tr><th>Cognome</th><th>Nome</th></tr>
+        <tr><td>{{student.surname}}</td><td>{{student.name}}</td></tr>
+      </table>
+
+
+      
+      <div class="info">
+          <label class="labelname">{{student.surname}} {{student.name}}</label>
+      </div>
+      <div class="button">
+          <button class="btn" (click)="profile(student)">>></button>
+      </div>
+       -->
+
   </div>
 
 </ion-content>

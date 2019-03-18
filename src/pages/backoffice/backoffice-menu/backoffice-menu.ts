@@ -3,7 +3,7 @@ import { StudentHome } from './../student/student-home/student-home';
 
 import { LoginPage } from './../../login/login';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 
 @Component({
@@ -24,19 +24,19 @@ goToClassroom() {
 }
 
 goToTeacher() {
-  this.navCtrl.setRoot(TeacherHome)
+  //this.navCtrl.setRoot(TeacherHome)
 }
 
 goToParent() {
-  this.navCtrl.setRoot(ParentHome)
+  //this.navCtrl.setRoot(ParentHome)
 }
 
 goToMatter() {
-  this.navCtrl.setRoot(MatterHome)
+  //this.navCtrl.setRoot(MatterHome)
 }
 
 goToBackoffice() {
-  this.navCtrl.setRoot(BackofficeHome)
+  //this.navCtrl.setRoot(BackofficeHome)
 }
   logout() {
     sessionStorage.removeItem("jwt")

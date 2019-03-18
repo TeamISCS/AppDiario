@@ -1,7 +1,11 @@
-page-backoffice-student {
-
+page-student-add {
+  .button {
+    margin-top: 30px;
+  }
 }
 
+$border-color: lightgray;
+$colorText: steelblue;
 body{
   text-align :center;
   font-weight: bold;
@@ -12,3 +16,37 @@ body{
 h1{
   color: blue;
 }
+
+div#form {
+  table {
+    width: 100%;
+    border: none;
+    tr {
+      height: 45px;
+      border: none;
+      border-bottom: 1px solid $border-color;
+      td:first-child {
+        border-right: 1px solid $border-color;
+        box-shadow: -5px -0px steelblue inset;
+      }
+      
+      td {
+        width: 50%;
+        font-size: 17px;
+        color: $colorText;
+        padding-left: 5px;
+        border: none;
+        text-align: left;
+        input { 
+          border: none;
+          height: 44px;
+          width: 100%;
+        }
+
+      }
+    }
+    
+  }
+}
+
+

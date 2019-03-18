@@ -13,8 +13,8 @@ export class StudentOptions {
     }
 
 
-    search(user) {
-        return this.api.search(`/api/student/info/${user}`)
+    search(user, by) {
+        return this.api.search(`/api/student/search/${by}/${user}`)
     }
     //DA FARE
     /*remove(classroom) {

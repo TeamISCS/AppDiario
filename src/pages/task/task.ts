@@ -10,9 +10,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 
-
-
-
 export class TaskPage {
 
   @ViewChild('descrizione') desc: HTMLTextAreaElement

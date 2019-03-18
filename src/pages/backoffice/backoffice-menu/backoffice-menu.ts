@@ -22,6 +22,22 @@ goToStudent() {
 goToClassroom() {
   this.navCtrl.setRoot(ClassroomHome)
 }
+
+goToTeacher() {
+  this.navCtrl.setRoot(TeacherHome)
+}
+
+goToParent() {
+  this.navCtrl.setRoot(ParentHome)
+}
+
+goToMatter() {
+  this.navCtrl.setRoot(MatterHome)
+}
+
+goToBackoffice() {
+  this.navCtrl.setRoot(BackofficeHome)
+}
   logout() {
     sessionStorage.removeItem("jwt")
     sessionStorage.setItem("logged", "false")

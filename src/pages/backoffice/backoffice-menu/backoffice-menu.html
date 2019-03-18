@@ -21,17 +21,17 @@
       </ion-col>
       <ion-col>
         <ion-icon name="person"></ion-icon>
-        <button ion-button>Teacher</button>
+        <button ion-button (click)="goToTeacher()">Teacher</button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <ion-icon name="person"></ion-icon>
-        <button ion-button>Parent</button>
+        <button ion-button (click)="goToParent()">Parent</button>
       </ion-col>
       <ion-col>
         <ion-icon name="person"></ion-icon>
-        <button ion-button>Backoffice</button>
+        <button ion-button (click)="goToBackoffice()">Backoffice</button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -41,7 +41,7 @@
       </ion-col>
       <ion-col>
         <ion-icon name="school"></ion-icon>
-        <button ion-button>Materia</button>
+        <button ion-button (click)="goToMatter()">Materia</button>
       </ion-col>
     </ion-row>
   </ion-grid>

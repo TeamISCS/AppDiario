@@ -1,3 +1,5 @@
+import { StudentHome } from './../student-home/student-home';
+import { StudentOptions } from './../student-options';
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -7,7 +9,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class StudentProfile {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public options: StudentOptions) {
   }
   ionViewWillEnter() {
     console.log(this.navParams.data)
@@ -20,5 +22,16 @@ export class StudentProfile {
     document.getElementById("classroom").innerHTML = this.navParams.data["classroom"]
   }
 
+  zz() {
+    this.navCtrl.setRoot(StudentHome)
+  }
+
+  removeStudent() {
+    this.options.remove(this.navParams.data["user"])
+    .subscribe(data => {
+      document.getElementById("removed").style.display = "block"
+      document.getElementById("message").style.display = "block"
+    })
+  }
   
 }

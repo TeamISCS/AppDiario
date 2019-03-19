@@ -22,11 +22,6 @@ export class StudentHome {
       "where": StudentAdd
     },
     {
-      "title": "Remove",
-      "icon": "person",
-      "where": null
-    },
-    {
       "title": "Search",
       "icon": "search",
       "where": StudentSearch

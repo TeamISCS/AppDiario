@@ -6,6 +6,12 @@
 
 </ion-header>
 
+<div id="removed" style="display: none">
+  <div id="message">
+    Utente rimosso
+    <button (click)="zz()">Ok</button>
+  </div>
+</div>
 
 <ion-content padding>
 
@@ -46,5 +52,5 @@
 
 
   <button ion-button>Edit</button>
-  <button ion-button>Remove</button>
+  <button ion-button (click)="removeStudent()">Remove</button>
 </ion-content>

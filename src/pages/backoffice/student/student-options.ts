@@ -12,6 +12,9 @@ export class StudentOptions {
         return this.api.add("/api/student/add", data)        
     }
 
+    remove(user) {
+        return this.api.remove(`/api/student/remove/${user}`)
+    }
 
     search(user, by) {
         return this.api.search(`/api/student/search/${by}/${user}`)

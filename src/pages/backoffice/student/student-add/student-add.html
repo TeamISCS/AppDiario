@@ -13,54 +13,55 @@
 
 <ion-content padding>
 
-  <p id="gg" style="display: block; color: red"></p>
-  <div id="form">
+  <div #status class="status"></div>
+  
+  <div id="add">
 
 
-    <div class="boxx">
-      <div class="infoo">Username</div>
-      <div class="inputt"><input #username type="text" placeholder="..."></div>
+    <div id="add-box">
+      <div id="add-name">Username</div>
+      <div id="add-data"><input #username type="text" placeholder="..."></div>
     </div>
 
-    <div class="boxx">
-      <div class="infoo">Password</div>
-      <div class="inputt"><input #password type="password" placeholder="..."></div>
-    </div>
-
-
-    <div class="boxx">
-      <div class="infoo">Nome</div>
-      <div class="inputt"><input #name type="text" placeholder="..."></div>
-    </div>
-
-    <div class="boxx">
-      <div class="infoo">Cognome</div>
-      <div class="inputt"><input #surname type="text" placeholder="..."></div>
+    <div id="add-box">
+      <div id="add-name">Password</div>
+      <div id="add-data"><input #password type="password" placeholder="..."></div>
     </div>
 
 
-    <div class="boxx">
-      <div class="infoo">Sesso</div>
+    <div id="add-box">
+      <div id="add-name">Nome</div>
+      <div id="add-data"><input #name type="text" placeholder="..."></div>
+    </div>
+
+    <div id="add-box">
+      <div id="add-name">Cognome</div>
+      <div id="add-data"><input #surname type="text" placeholder="..."></div>
+    </div>
+
+
+    <div id="add-box">
+      <div id="add-name">Sesso</div>
       <div class="input"><select #gender>
           <option>Maschio</option>
           <option>Femmina</option>
         </select></div>
     </div>
 
-    <div class="boxx">
-      <div class="infoo">Cod. Fiscale</div>
-      <div class="inputt"><input #cf type="text" placeholder="xxxxxxxxxxxxxxxx"></div>
+    <div id="add-box">
+      <div id="add-name">Cod. Fiscale</div>
+      <div id="add-data"><input #cf type="text" placeholder="xxxxxxxxxxxxxxxx"></div>
     </div>
 
 
-    <div class="boxx">
-      <div class="infoo">Birth_Date</div>
-      <div class="inputt"><input #birth_date type="text" placeholder="AAAA/MM/GG"></div>
+    <div id="add-box">
+      <div id="add-name">Birth_Date</div>
+      <div id="add-data"><input #birth_date type="text" placeholder="GG/MM/AAAA"></div>
     </div>
 
-    <div class="boxx">
-      <div class="infoo">Birth_Place</div>
-      <div class="inputt"><input #birth_place type="text" placeholder="..."></div>
+    <div id="add-box">
+      <div id="add-name">Birth_Place</div>
+      <div id="add-data"><input #birth_place type="text" placeholder="..."></div>
     </div>
 
 

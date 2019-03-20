@@ -15,42 +15,50 @@
 
 <ion-content padding>
 
-  <ion-item>
-    <ion-label>Name</ion-label>
-    <ion-label id="name" readonly></ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Surname</ion-label>
-    <ion-label id="surname" readonly></ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Cod Fiscale</ion-label>
-    <ion-label id="cf" readonly></ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Sesso</ion-label>
-    <ion-label id="gender" readonly></ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Data Nascita</ion-label>
-    <ion-label id="birth_date" readonly></ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Luogo Nascita</ion-label>
-    <ion-label id="birth_place" readonly></ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Classe</ion-label>
-    <ion-label id="classroom" readonly></ion-label>
-  </ion-item>
 
 
+
+  <div id="bd">
+
+      <div id="bd-box">
+        <div id="bd-name">Nome</div>
+        <div id="bd-data"><label id="name"></label></div>
+      </div>
+  
+      <div id="bd-box">
+        <div id="bd-name">Cognome</div>
+        <div id="bd-data"><label id="surname"></label></div>
+      </div>
+  
+  
+      <div id="bd-box">
+        <div id="bd-name">Sesso</div>
+        <div id="bd-data"><label id="gender"></label></div>
+      </div>
+  
+      <div id="bd-box">
+        <div id="bd-name">Cod. Fiscale</div>
+        <div id="bd-data"><label id="cf"></label></div>
+      </div>
+  
+  
+      <div id="bd-box">
+        <div id="bd-name">Birth_Date</div>
+        <div id="bd-data"><label id="birth_date"></label></div>
+      </div>
+  
+      <div id="bd-box">
+        <div id="bd-name">Birth_Place</div>
+        <div id="bd-data"><label id="birth_place"></label></div>
+      </div>
+
+      <div id="bd-box">
+        <div id="bd-name">Classroom</div>
+        <div id="bd-data"><label id="classroom"></label></div>
+      </div>  
+
+    </div>
+  
   <button ion-button>Edit</button>
   <button ion-button (click)="removeStudent()">Remove</button>
 </ion-content>

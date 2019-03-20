@@ -37,6 +37,7 @@ export class StudentSearch {
     .subscribe(data => {
       if(data != null){
         data.forEach(element => {
+
           this.studentList.push(element)
           console.log(this.studentList)
         });

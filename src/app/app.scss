@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -16,62 +15,152 @@
 // automatically applied to the <body> element in the app.
 
 ion-header {
-    height: $headerHeight;
+  height: $headerHeight;
 }
 
 .toolbar-background {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
 ion-title {
+  height: 100%;
 
-    height: 100%;
-
-    .toolbar-title {
-        font-size: 30px;
-        color: white;
-        padding: 0px !important;
-        
-    }
+  .toolbar-title {
+    font-size: 30px;
+    color: white;
+    padding: 0px !important;
+  }
 }
 ion-navbar {
-
-    height: 100%;
+  height: 100%;
 }
 
 ion-footer {
-
-    height: $footerHeight;
-    background-color: steelblue
+  height: $footerHeight;
+  background-color: steelblue;
 }
 
 .button {
-    background-color: steelblue;
+  background-color: steelblue;
 }
 
+/*
+ * TABELLA DEL CALENDARIO
+ */
 table#calendar {
+  tr {
+    height: 40px;
+  }
 
-    tr {
-        height: 40px;
-    }
+  td {
+    width: 60px;
+  }
+  td.currentDay {
+    background-color: #70b0e5;
+  }
 
-    td {
-        width: 60px;
-    }
-    td.currentDay {
-        background-color: #70B0E5;
-    }
+  tr.month {
+    background-color: steelblue;
+    color: white;
+  }
 
-    tr.month {
-        background-color: steelblue;
-        color: white;
-    }
+  td.noDay {
+    color: lightgrey;
+  }
 
-    td.noDay {
-        color: lightgrey;
-    }
-
-    td:active {
-        background-color: lightskyblue;
-    }
+  td:active {
+    background-color: lightskyblue;
+  }
 }
+
+/*
+ * DIV DEI DATI ANAGRAFICI
+ */
+
+div#bd {
+
+  div#bd-box {
+    display: flex;
+    margin-bottom: 15px;
+    border: 1px solid lightgray;
+    border-top: 6px solid steelblue;
+    border-bottom: hidden;
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 2px 2px dimgray;
+
+    div#bd-name {
+      padding-left: 5px;
+      flex: 2;
+      text-align: left;
+      color: steelblue;
+      font-size: 20px;
+    }
+
+    div#bd-data {
+      padding-left: 5px;
+      flex: 3;
+      border-left: 1px solid lightgray;
+
+      select {
+        width: 100px;
+        height: 100px;
+      }
+      label {
+        width: 100%;
+        height: 100%;
+        border: none;
+        font-size: 20px;
+        color: gray;
+      }
+    }
+  }
+}
+
+
+
+/*
+ * DIV DEL FORM PER AGGIUNGERE UNO STUDENTE/PROFESSORE/DOCENTE/BACK-OFFICE
+ */
+ 
+div#add {
+  
+    div#add-box {
+      display: flex;
+      margin-bottom: 15px;
+      border: 1px solid lightgray;
+      border-top: 6px solid steelblue;
+      border-bottom: hidden;
+      height: 40px;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px 2px 2px dimgray;
+      div#add-name {
+        padding-left: 5px;
+        flex: 2;
+        text-align: left;
+        color: steelblue;
+        font-size: 20px;
+      }
+  
+      div#add-data {
+        padding-left: 5px;
+        flex: 3;
+        border-left: 1px solid lightgray;
+  
+        select {
+          width: 100px;
+          height: 100px;
+        }
+        input {
+          width: 100%;
+          height: 100%;
+          border: none;
+          font-size: 20px;
+          color: gray;
+        }
+      }
+    }
+  }
+  

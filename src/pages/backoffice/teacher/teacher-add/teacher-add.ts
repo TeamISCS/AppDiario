@@ -1,5 +1,6 @@
+import { TeacherHomePage } from '../teacher-home/teacher-home';
 import { TeacherOptions } from './../teacher-options';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
@@ -11,13 +12,15 @@ export class TeacherAdd {
 
   constructor(public navCtrl: NavController, public options: TeacherOptions) {
   }
-  @ViewChild('username') user: HTMLInputElement
-  @ViewChild('password') pass: HTMLInputElement
-  @ViewChild('nome') nome: HTMLInputElement
-  @ViewChild('cognome') cognome: HTMLInputElement
-  @ViewChild('luogo') luogo: HTMLInputElement
-  @ViewChild('cf') cf: HTMLInputElement
-  @ViewChild('gender') gender: HTMLSelectElement
+  @ViewChild('username') username: ElementRef
+  @ViewChild('password') password: ElementRef
+  @ViewChild('name') name: ElementRef
+  @ViewChild('surname') surname: ElementRef
+  @ViewChild('birth_place') birth_place: ElementRef
+  @ViewChild('birth_date') birth_date: ElementRef
+  @ViewChild('cf') cf: ElementRef
+  @ViewChild('gender') gender: ElementRef
+  @ViewChild('status') status: ElementRef
 
   data = {
     "username": "",
@@ -25,58 +28,85 @@ export class TeacherAdd {
     "name": "",
     "surname": "",
     "birth_place": "",
+    "birth_date": "",
     "cf": "",
-    "gender":"",
-    "privilege":"2"
+    "gender": ""
   }
+
+
+  formIsCorrect() {
+    let birth_date: string = this.birth_date.nativeElement.value
+    let arrayDate = birth_date.split("/")
+    let today = new Date()
+
+    if (!this.cf.nativeElement.value || !this.name.nativeElement.value || !this.username.nativeElement.value || !this.password.nativeElement.value || !this.surname.nativeElement.value || !this.birth_place.nativeElement.value || !this.gender.nativeElement.value) {
+      return { correct: false, message: "C'è un campo vuoto" }
+    }
+    else if (this.cf.nativeElement.value.length != 16) {
+      return { correct: false, message: "Il codice fiscale non ha 16 caratteri" }
+    }
+    else if (arrayDate[2] > today.getFullYear().toString()) {
+      return { correct: false, message: "Il professore viene dal futuro?" }
+    }
+    else if (arrayDate[1] > today.getMonth().toString()) {
+      return { correct: false, message: "Il professore viene dal futuro?" }
+    }
+    else if (arrayDate[0] > today.getDate().toString()) {
+      return { correct: false, message: "Il professore viene dal futuro?" }
+    }
+    else {
+      return { correct: true, message: "" }
+    }
+
+  }
+
+
 
   register() {
-    console.log(this.cognome.value)
+    console.log(this.status)
+    let form = this.formIsCorrect()
+    if (form.correct) {
 
-    if(!this.cf.value ||!this.nome.value ||!this.user.value ||!this.pass.value  ||!this.cognome.value ||!this.luogo.value  ||!this.gender.value ){
-      document.getElementById("gg").style.display = "block"
-      document.getElementById("gg").innerHTML = "C'è un campo vuoto"
+      this.data.username = this.username.nativeElement.value;
+      this.data.password = this.password.nativeElement.value;
+      this.data.name = this.name.nativeElement.value;
+      this.data.surname = this.surname.nativeElement.value;
+      this.data.birth_date = this.birth_date.nativeElement.value;
+      this.data.birth_place = this.birth_place.nativeElement.value;
+      this.data.cf = this.cf.nativeElement.value;
+      this.data.gender = this.gender.nativeElement.value[0];
+      this.options.add(this.data)
+        .subscribe(data => {
+          console.log(data)
+          if (data['status'] == 'added') {
+            this.status.nativeElement.attributes.class.value += " correct"
+            this.status.nativeElement.innerHTML = "L'utente è stato aggiunto con successo"
+            this.username.nativeElement.value = null
+            this.password.nativeElement.value = null
+            this.name.nativeElement.value = null
+            this.surname.nativeElement.value = null
+            this.birth_place.nativeElement.value = null
+            this.cf.nativeElement.value = null
+            this.gender.nativeElement.value = null
+          }
+        },
+          error => {
+            console.log("errore")
+          })
     }
-    else if(this.cf.value.length != 16)
-    {
-      document.getElementById("gg").style.display = "block"
-      document.getElementById("gg").innerHTML = "Il codice fiscale non ha 16 caratteri"
+    else {
+      this.status.nativeElement.attributes.class.value += " error"
+      this.status.nativeElement.innerHTML = form.message
     }
-    else{
-
-    document.getElementById("gg").style.display = "none"
-    this.data.username=this.user.value;
-    this.data.password=this.pass.value;
-    this.data.name=this.nome.value;
-    this.data.surname=this.cognome.value;
-    this.data.birth_place=this.luogo.value;
-    this.data.cf=this.cf.value;
-    this.data.gender=this.gender.value;
-    this.options.add(this.data)
-    .subscribe(data => {
-      console.log(data)
-      if(data['status']=='added'){
-        document.getElementById("gg").style.display = "block"
-        document.getElementById("gg").style.color = "black"
-        document.getElementById("gg").innerHTML = "L'utente è stato aggiunto con successo"
-        this.user.value = null
-        this.pass.value = null
-        this.nome.value = null
-        this.cognome.value = null
-        this.luogo.value = null
-        this.cf.value = null
-        this.gender.value = null
-      }
-    },
-    error => {
-      console.log("errore")
-    })
-  }
-  }
 
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BackofficeTeacherPage');
+
   }
+
+goHome() {
+  this.navCtrl.setRoot(TeacherHomePage)
+}
+
+
 
 }

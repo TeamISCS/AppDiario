@@ -2,8 +2,6 @@ import { StudentOptions } from './../student-options';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { StudentHome } from '../student-home/student-home';
-import { isString } from 'ionic-angular/umd/util/util';
-import { stringify } from '@angular/compiler/src/util';
 
 
 @Component({

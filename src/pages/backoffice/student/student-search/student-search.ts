@@ -41,7 +41,7 @@ export class StudentSearch {
           this.studentList.push(element)
           console.log(this.studentList)
         });
-  
+
       }
     })
   }

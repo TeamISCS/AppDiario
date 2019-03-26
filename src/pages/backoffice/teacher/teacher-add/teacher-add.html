@@ -1,59 +1,73 @@
 <ion-header>
 
-        <ion-navbar>
-        <ion-title>Inserisci</ion-title>
-        </ion-navbar>
-        </ion-header>
-      
-        <ion-content padding>
-      
-        <p id="gg" style="display: block; color: red"></p>
-      
-        <ion-list>
-        <ion-item>
-      
-        <ion-input placeholder="Username" type="text" name="username" #username ></ion-input>
-      
-        </ion-item>
-        <ion-item>
-      
-        <ion-input placeholder="Password" type="text" name="password" #password></ion-input>
-        </ion-item>
-      
-        <ion-item>
-      
-        <ion-input placeholder="Nome" type="text" name="nome" #nome></ion-input>
-        </ion-item>
-        <ion-item>
-      
-        <ion-input placeholder="Cognome" type="text" name="cognome" #cognome></ion-input>
-      
-        </ion-item>
-      
-        <ion-item>
-      
-            <ion-select value="gender" placeholder="Sesso" okText="Okay" #gender cancelText="Annulla">
-              <ion-option value="M">Maschio</ion-option>
-              <ion-option value="F">Femmina</ion-option>
-          </ion-select>
-        </ion-item>
-      
-      
-      
-        <ion-item>
-      
-        <ion-input placeholder="Luogo di nascita" type="text" name="luogo" #luogo></ion-input>
-      
-        </ion-item>
-        <ion-item>
-      
-        <ion-input placeholder="Codice fiscale" type="text" name="cf" #cf></ion-input>
-      
-        </ion-item>
-      
-        <input type="submit" value="Inserisci" (click)="register()">
-      
-        </ion-list>
-      
-        </ion-content>
-      
+  <ion-navbar>
+    <ion-title>
+      <div class="back" (click)="goHome()">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </div>
+      <div class="title">Inserisci</div>
+      <div class="empty"></div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div #status class="status"></div>
+
+  <div id="add">
+
+
+    <div id="add-box">
+      <div id="add-name">Username</div>
+      <div id="add-data"><input #username type="text" placeholder="..."></div>
+    </div>
+
+    <div id="add-box">
+      <div id="add-name">Password</div>
+      <div id="add-data"><input #password type="password" placeholder="..."></div>
+    </div>
+
+
+    <div id="add-box">
+      <div id="add-name">Nome</div>
+      <div id="add-data"><input #name type="text" placeholder="..."></div>
+    </div>
+
+    <div id="add-box">
+      <div id="add-name">Cognome</div>
+      <div id="add-data"><input #surname type="text" placeholder="..."></div>
+    </div>
+
+
+    <div id="add-box">
+      <div id="add-name">Sesso</div>
+      <div class="input"><select #gender>
+          <option>Maschio</option>
+          <option>Femmina</option>
+        </select></div>
+    </div>
+
+    <div id="add-box">
+      <div id="add-name">Cod. Fiscale</div>
+      <div id="add-data"><input #cf type="text" placeholder="xxxxxxxxxxxxxxxx"></div>
+    </div>
+
+
+    <div id="add-box">
+      <div id="add-name">Birth_Date</div>
+      <div id="add-data"><input #birth_date type="text" placeholder="GG/MM/AAAA"></div>
+    </div>
+
+    <div id="add-box">
+      <div id="add-name">Birth_Place</div>
+      <div id="add-data"><input #birth_place type="text" placeholder="..."></div>
+    </div>
+
+
+    <button ion-button (click)="register()">Add</button>
+  </div>
+
+
+
+</ion-content>

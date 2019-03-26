@@ -1,3 +1,4 @@
+import { TeacherHomePage } from './../pages/backoffice/teacher/teacher-home/teacher-home';
 import { StudentHomeModule } from './../pages/backoffice/student/student-home/student-home.module';
 import { ClassroomHome } from './../pages/backoffice/classroom/classroom-menu/classroom-home';
 import { ParentOptions } from './../pages/backoffice/parent/parent-options';
@@ -45,7 +46,8 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
     ParentAdd,
     TeacherAdd,
     BackofficeMenu,
-    ClassroomHome
+    ClassroomHome,
+    TeacherHomePage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
     ParentAdd,
     TeacherAdd,
     BackofficeMenu,
-    ClassroomHome
+    ClassroomHome,
+    TeacherHomePage
   ],
   providers: [
     StatusBar,

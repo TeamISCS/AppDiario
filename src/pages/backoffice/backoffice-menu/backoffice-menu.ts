@@ -1,3 +1,4 @@
+import { TeacherHomePage } from '../teacher/teacher-home/teacher-home';
 import { ClassroomHome } from './../classroom/classroom-menu/classroom-home';
 import { StudentHome } from './../student/student-home/student-home';
 
@@ -24,7 +25,7 @@ goToClassroom() {
 }
 
 goToTeacher() {
-  //this.navCtrl.setRoot(TeacherHome)
+  this.navCtrl.setRoot(TeacherHomePage)
 }
 
 goToParent() {

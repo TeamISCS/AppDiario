@@ -58,7 +58,7 @@ export class StudentAdd {
       return { correct: false, message: "Lo studente viene dal futuro?" }
     }
     else {
-      return { correct: true }
+      return { correct: true, message: "" }
     }
 
   }

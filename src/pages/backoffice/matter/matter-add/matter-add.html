@@ -1,27 +1,32 @@
 <ion-header>
 
-    <ion-navbar>
-    <ion-title>Inserisci materia</ion-title>
-    </ion-navbar>
-    </ion-header>
-  
-    <ion-content padding>
-  
-    <p id="smss" style="display: block; color: red"></p>
-  
-    <ion-list>
-    <ion-item>
-  
-    <ion-input placeholder="materia" type="text" name="materia" #materia ></ion-input>
-  
-    </ion-item>
-  
-  
-    <input type="submit" value="Aggiungi" (click)="addMatter()">
-  
-    </ion-list>
-  
-    </ion-content>
-  
-  
-  
+  <ion-navbar>
+    <ion-title>
+      <div class="back" (click)="goHome()">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </div>
+      <div class="title">Inserisci</div>
+      <div class="empty"></div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div #status class="status"></div>
+
+  <div id="add">
+
+
+    <div id="add-box">
+      <div id="add-name">Materia</div>
+      <div id="add-data"><input #matter type="text" placeholder="..."></div>
+    </div>
+    <button ion-button (click)="addMatter()">Add</button>
+  </div>
+
+
+
+</ion-content>
+
+

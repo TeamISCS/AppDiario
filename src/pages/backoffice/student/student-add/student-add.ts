@@ -68,6 +68,7 @@ export class StudentAdd {
     let form = this.formIsCorrect()
     if (form.correct) {
 
+      console.log(this.username)
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
       this.data.name = this.name.nativeElement.value;

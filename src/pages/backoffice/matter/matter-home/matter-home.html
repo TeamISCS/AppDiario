@@ -5,7 +5,7 @@
       <div class="back" (click)="goBackoffice()">
         <ion-icon name="arrow-back" color="white"></ion-icon>
       </div>
-      <div class="title">Professore</div>
+      <div class="title">Materia</div>
       <div class="empty"></div>
     </ion-title>
   </ion-navbar>
@@ -16,7 +16,7 @@
 <ion-content padding>
 
   <div>
-    <div class="divlist" *ngFor="let page of teacherPages">
+    <div class="divlist" *ngFor="let page of matterPages">
       <div class="divitem" (click)="goTo(page.where)">
         <div class="divicon">
           <ion-icon name="{{page.icon}}"></ion-icon>

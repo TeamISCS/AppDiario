@@ -45,7 +45,7 @@ export class HomePage {
             sessionStorage.setItem("CF", student["CF"])
             sessionStorage.setItem("birth_place", student["birth_place"])
             sessionStorage.setItem("gender", student["gender"])
-          
+
           })
         }
         else if(sessionStorage.getItem("privilege") == "2") {
@@ -121,7 +121,7 @@ calendars(data){
     let table = document.createElement("table")
     table.id = "calendar"
     let days = ["Lun", "Mar", "Mer", "Gio", "Ven", "Sab", "Dom"]
-  
+
 
     table.innerHTML += `<tr class="month"><th colspan="7">${months[data.getMonth()]} ${data.getFullYear()}</th></tr>`
     let tr = document.createElement("tr")
@@ -131,7 +131,7 @@ calendars(data){
         tr.appendChild(el)
         table.appendChild(tr)
     }
-    	
+
   	let g = 1
     let finish = false
   	while(!finish){
@@ -183,7 +183,7 @@ calendars(data){
           	}
         	}
           if(g >= this.getDays(cc.getFullYear(), cc.getMonth() + 1)) {
-          	finish = true        
+          	finish = true
           }
         }
 				table.appendChild(ttr);
@@ -194,6 +194,8 @@ calendars(data){
 
 	getDays(anno, mese) {
 		return new Date(anno, mese, 0).getDate();
-	}	
+  }
+
+
 }
 

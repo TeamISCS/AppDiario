@@ -1,10 +1,10 @@
-import { TeacherAdd } from './../teacher-add/teacher-add';
+import { MatterAdd } from './../matter-add/matter-add';
 import { BackofficeMenu } from './../../backoffice-menu/backoffice-menu';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the TeacherHomePage page.
+ * Generated class for the MatterHomePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,22 +12,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-teacher-home',
-  templateUrl: 'teacher-home.html',
+  selector: 'page-matter-home',
+  templateUrl: 'matter-home.html',
 })
-export class TeacherHomePage {
+export class MatterHomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  teacherPages = [
+  matterPages = [
     {
       "title": "Add",
       "icon": "person-add",
-      "where": TeacherAdd
-    },
-    {
-      "title": "Search",
-      "icon": "search"
+      "where": MatterAdd
     }
   ]
 
@@ -40,7 +36,7 @@ export class TeacherHomePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TeacherHomePage');
+    console.log('ionViewDidLoad MatterHomePage');
   }
 
 }

@@ -1,5 +1,6 @@
+import { MatterHomePage } from './../matter-home/matter-home';
 import { MatterOptions } from './../matter-options';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
 
@@ -9,11 +10,12 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class MatterAdd {
 
-  @ViewChild('materia') materia: HTMLInputElement
+
 
   constructor(public navCtrl: NavController, public option: MatterOptions) {
   }
 
+  @ViewChild('matter') matter: ElementRef
   data = {
     "name": "",
   }
@@ -22,9 +24,16 @@ export class MatterAdd {
     console.log('ionViewDidLoad BackofficeClassPage');
   }
 
+  goHome() {
+    this.navCtrl.setRoot(MatterHomePage)
+  }
   addMatter(){
 
-    if(!this.materia.value)
+
+      this.data.name = this.matter.nativeElement.value;
+
+
+    if(!this.matter.nativeElement)
     {
       document.getElementById("smss").style.display = "block"
       document.getElementById("smss").innerHTML = "C'è un campo vuoto"
@@ -32,7 +41,7 @@ export class MatterAdd {
     else{
 
     document.getElementById("smss").style.display = "none"
-    this.data.name=this.materia.value;
+    this.data.name=this.matter.nativeElement;
 
 
       this.option.add(this.data)

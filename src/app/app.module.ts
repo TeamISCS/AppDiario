@@ -14,7 +14,6 @@ import { TaskPage } from './../pages/task/task';
 import { UserPage } from './../pages/user/user';
 import { BackofficeMenu } from './../pages/backoffice/backoffice-menu/backoffice-menu';
 import { LoginPage } from './../pages/login/login';
-import { RegisterPage } from './../pages/register/register';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -36,7 +35,6 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage,
     LoginPage,
     UserPage,
     TaskPage,
@@ -53,7 +51,6 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage,
     LoginPage,
     UserPage,
     TaskPage,

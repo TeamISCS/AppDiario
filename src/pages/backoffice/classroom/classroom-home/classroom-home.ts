@@ -1,8 +1,9 @@
 import { BackofficeMenu } from './../../backoffice-menu/backoffice-menu';
 import { ClassroomAdd } from './../classroom-add/classroom-add';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-classroom-home',
   templateUrl: 'classroom-home.html',
@@ -33,6 +34,6 @@ export class ClassroomHome {
  goBackoffice() {
    this.navCtrl.setRoot(BackofficeMenu)
  }
- 
+
 
 }

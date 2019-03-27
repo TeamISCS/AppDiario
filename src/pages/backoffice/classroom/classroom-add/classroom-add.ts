@@ -1,7 +1,7 @@
 import { ClassroomOptions } from './../classroom-options';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { ClassroomHome } from '../classroom-menu/classroom-home';
+import { ClassroomHome } from '../classroom-home/classroom-home';
 
 
 @Component({

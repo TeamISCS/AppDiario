@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <div class="back blockheader" (click)="goBackoffice()">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </div>
+      <div class="title blockheader">Backoffice</div>
+      <div class="empty blockheader"></div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div>
+    <div class="divlist" *ngFor="let page of backofficePages">
+      <div class="divitem" (click)="goTo(page.where)">
+        <div class="divicon">
+          <ion-icon name="{{page.icon}}"></ion-icon>
+        </div>
+        <div class="divtitle">
+          <ion-item>{{page.title}}</ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

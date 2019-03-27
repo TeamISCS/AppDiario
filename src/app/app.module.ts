@@ -1,7 +1,7 @@
+import { BackofficeMenuModule } from './../pages/backoffice/backoffice-menu/backoffice-menu.module';
 import { MatterHomePage } from './../pages/backoffice/matter/matter-home/matter-home';
 import { TeacherHomePage } from './../pages/backoffice/teacher/teacher-home/teacher-home';
 import { StudentHomeModule } from './../pages/backoffice/student/student-home/student-home.module';
-import { ClassroomHome } from './../pages/backoffice/classroom/classroom-menu/classroom-home';
 import { ParentOptions } from './../pages/backoffice/parent/parent-options';
 import { TeacherAdd } from './../pages/backoffice/teacher/teacher-add/teacher-add';
 import { ParentAdd } from './../pages/backoffice/parent/parent-add/parent-add';
@@ -41,21 +41,13 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
     UserPage,
     TaskPage,
     SearchPage,
-    SettingTaskPage,
-    ClassroomAdd,
-    MatterAdd,
-    ParentAdd,
-    TeacherAdd,
-    BackofficeMenu,
-    ClassroomHome,
-    TeacherHomePage,
-    MatterHomePage
+    SettingTaskPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    StudentHomeModule
+    BackofficeMenuModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,27 +58,14 @@ import { TeacherOptions } from '../pages/backoffice/teacher/teacher-options';
     UserPage,
     TaskPage,
     SearchPage,
-    SettingTaskPage,
-    ClassroomAdd,
-    MatterAdd,
-    ParentAdd,
-    TeacherAdd,
-    BackofficeMenu,
-    ClassroomHome,
-    TeacherHomePage,
-    MatterHomePage
+    SettingTaskPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DiarioApiProvider,
-    Api,
-    ClassroomOptions,
-    MatterOptions,
-    StudentOptions,
-    TeacherOptions,
-    ParentOptions
+    Api
   ]
 })
 export class AppModule {}

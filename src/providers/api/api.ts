@@ -41,4 +41,5 @@ export class Api {
     search(pathUrl) {
         return this.http.get((this.urlApp + pathUrl), this.httpOptions)
     }
+
 }

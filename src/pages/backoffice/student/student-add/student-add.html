@@ -14,7 +14,7 @@
 <ion-content padding>
 
   <div #status class="status"></div>
-  
+
   <div id="add">
 
 
@@ -53,6 +53,12 @@
       <div id="add-data"><input #cf type="text" placeholder="xxxxxxxxxxxxxxxx"></div>
     </div>
 
+    <div id="add-box">
+      <div id="add-name">Classe</div>
+      <div class="input"><select #classroom>
+        <option *ngFor="let classe of this.classi">{{classe}}</option>
+        </select></div>
+    </div>
 
     <div id="add-box">
       <div id="add-name">Birth_Date</div>

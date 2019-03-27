@@ -1,3 +1,4 @@
+import { StudentOptions } from './../student-options';
 import { StudentHome } from './student-home';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
@@ -19,6 +20,9 @@ import { StudentSearch } from '../student-search/student-search';
       StudentAdd,
       StudentProfile,
       StudentSearch
+  ],
+  providers:[
+    StudentOptions
   ]
 })
 export class StudentHomeModule {}

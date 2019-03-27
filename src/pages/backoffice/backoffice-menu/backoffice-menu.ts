@@ -1,6 +1,7 @@
+import { BackofficeHome } from './../backoffice-user/backoffice-home/backoffice-home';
 import { MatterHomePage } from './../matter/matter-home/matter-home';
 import { TeacherHomePage } from '../teacher/teacher-home/teacher-home';
-import { ClassroomHome } from './../classroom/classroom-menu/classroom-home';
+import { ClassroomHome } from './../classroom/classroom-home/classroom-home';
 import { StudentHome } from './../student/student-home/student-home';
 
 import { LoginPage } from './../../login/login';
@@ -38,7 +39,7 @@ goToMatter() {
 }
 
 goToBackoffice() {
-  //this.navCtrl.setRoot(BackofficeHome)
+  this.navCtrl.setRoot(BackofficeHome)
 }
   logout() {
     sessionStorage.removeItem("jwt")

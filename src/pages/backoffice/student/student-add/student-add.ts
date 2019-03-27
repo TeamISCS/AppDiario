@@ -34,6 +34,16 @@ export class StudentAdd {
     "gender": ""
   }
 
+  classi = []
+
+  ionViewDidLoad(){
+   this.options.allClass()
+   .subscribe(data => {
+     data.forEach(element => {
+       this.classi.push(element)
+     })
+   })
+  }
 
   formIsCorrect() {
     let birth_date: string = this.birth_date.nativeElement.value

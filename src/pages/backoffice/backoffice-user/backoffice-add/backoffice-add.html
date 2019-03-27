@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <div class="back" (click)="goHome()">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </div>
+      <div class="title">Inserisci</div>
+      <div class="empty"></div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div #status class="status"></div>
+
+  <div id="add">
+
+
+    <div id="add-box">
+      <div id="add-name">Username</div>
+      <div id="add-data"><input #username type="text" placeholder="..."></div>
+    </div>
+
+    <div id="add-box">
+      <div id="add-name">Password</div>
+      <div id="add-data"><input #password type="password" placeholder="..."></div>
+    </div>
+
+
+
+    <button ion-button (click)="register()">Add</button>
+  </div>
+
+
+
+</ion-content>

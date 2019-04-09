@@ -2,22 +2,22 @@ import { MatterOptions } from './../matter-options';
 import { MatterAdd } from './../matter-add/matter-add';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { MatterHomePage } from './matter-home';
+import { MatterHome } from './matter-home';
 
 @NgModule({
   declarations: [
-    MatterHomePage,
+    MatterHome,
     MatterAdd
   ],
   imports: [
-    IonicPageModule.forChild(MatterHomePage),
+    IonicPageModule.forChild(MatterHome),
   ],
   entryComponents: [
-    MatterHomePage,
+    MatterHome,
     MatterAdd
   ],
   providers:[
     MatterOptions
   ]
 })
-export class MatterHomePageModule {}
+export class MatterHomeModule {}

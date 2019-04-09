@@ -2,23 +2,23 @@ import { TeacherOptions } from './../teacher-options';
 import { TeacherAdd } from './../teacher-add/teacher-add';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { TeacherHomePage } from './teacher-home';
+import { TeacherHome } from './teacher-home';
 
 @NgModule({
   declarations: [
-    TeacherHomePage,
+    TeacherHome,
     TeacherAdd
   ],
   imports: [
-    IonicPageModule.forChild(TeacherHomePage),
+    IonicPageModule.forChild(TeacherHome),
   ],
   entryComponents: [
     TeacherAdd,
-    TeacherHomePage
+    TeacherHome
   ],
 
   providers:[
     TeacherOptions
   ]
 })
-export class TeacherHomePageModule {}
+export class TeacherHomeModule {}

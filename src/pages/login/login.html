@@ -1,18 +1,18 @@
 <ion-header>
   <ion-navbar color="colorApp">
     <ion-title>
-      <div class="empty blockheader"></div>
-      <div class="title blockheader">Login</div>
-      <div class="empty blockheader"></div>
+      <div class="first"></div>
+      <div class="middle">Diario</div>
+      <div class="end"></div>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div id="input" class="block">
-    <ion-input text-center type="text" placeholder="Username" #user class="block"></ion-input>
-    <ion-input text-center type="password" placeholder="Password" #pass class="block"></ion-input> <button ion-button
-      type="submit" (click)="controlla()" class="block">Login</button>
+  <div id="login-input">
+    <ion-input text-center type="text" placeholder="Username" #user></ion-input>
+    <ion-input text-center type="password" placeholder="Password" #pass></ion-input>
+    <button ion-button type="submit" (click)="controlla()">Login</button>
   </div>
   <div id="error" class="block" style="display: none;">Le credenziali sono sbagliate</div>
 </ion-content>

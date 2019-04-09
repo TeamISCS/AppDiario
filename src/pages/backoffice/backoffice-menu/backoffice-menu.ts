@@ -1,11 +1,11 @@
-import { ParentHomePage } from './../parent/parent-home/parent-home';
+import { ParentHome } from './../parent/parent-home/parent-home';
 import { BackofficeHome } from './../backoffice-user/backoffice-home/backoffice-home';
-import { MatterHomePage } from './../matter/matter-home/matter-home';
-import { TeacherHomePage } from '../teacher/teacher-home/teacher-home';
+import { MatterHome } from './../matter/matter-home/matter-home';
+import { TeacherHome } from './../teacher/teacher-home/teacher-home';
 import { ClassroomHome } from './../classroom/classroom-home/classroom-home';
 import { StudentHome } from './../student/student-home/student-home';
 
-import { LoginPage } from './../../login/login';
+import { Login } from './../../login/login';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -28,15 +28,15 @@ goToClassroom() {
 }
 
 goToTeacher() {
-  this.navCtrl.setRoot(TeacherHomePage)
+  this.navCtrl.setRoot(TeacherHome)
 }
 
 goToParent() {
-  this.navCtrl.setRoot(ParentHomePage)
+  this.navCtrl.setRoot(ParentHome)
 }
 
 goToMatter() {
-  this.navCtrl.setRoot(MatterHomePage)
+  this.navCtrl.setRoot(MatterHome)
 }
 
 goToBackoffice() {
@@ -52,6 +52,6 @@ goToBackoffice() {
     sessionStorage.removeItem("classroom")
     sessionStorage.removeItem("CF")
     sessionStorage.removeItem("gender")
-    this.navCtrl.setRoot(LoginPage)
+    this.navCtrl.setRoot(Login)
   }
 }

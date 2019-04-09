@@ -1,7 +1,7 @@
-import { ParentHomePageModule } from './../parent/parent-home/parent-home.module';
+import { ParentHomeModule } from './../parent/parent-home/parent-home.module';
 import { BackofficeOptions } from './../backoffice-user/backoffice-options';
-import { TeacherHomePageModule } from './../teacher/teacher-home/teacher-home.module';
-import { MatterHomePageModule } from './../matter/matter-home/matter-home.module';
+import { TeacherHomeModule } from './../teacher/teacher-home/teacher-home.module';
+import { MatterHomeModule } from './../matter/matter-home/matter-home.module';
 import { StudentHomeModule } from './../student/student-home/student-home.module';
 import { ClassroomHomeModule } from './../classroom/classroom-home/classroom-home.module';
 
@@ -20,9 +20,9 @@ import { NgModule } from '@angular/core';
     BackofficeHomeModule,
     ClassroomHomeModule,
     StudentHomeModule,
-    MatterHomePageModule,
-    TeacherHomePageModule,
-    ParentHomePageModule
+    MatterHomeModule,
+    TeacherHomeModule,
+    ParentHomeModule
   ],
   entryComponents: [
     BackofficeMenu

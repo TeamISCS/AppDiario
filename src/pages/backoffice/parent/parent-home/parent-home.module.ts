@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { ParentHomePage } from './parent-home';
+import { ParentHome } from './parent-home';
 import { ParentAdd } from '../parent-add/parent-add';
 import { ParentOptions } from '../parent-options';
 
 @NgModule({
   declarations: [
-    ParentHomePage,
+    ParentHome,
     ParentAdd
   ],
   imports: [
-    IonicPageModule.forChild(ParentHomePage),
+    IonicPageModule.forChild(ParentHome),
   ],
   entryComponents: [
     ParentAdd,
-    ParentHomePage
+    ParentHome
   ],
   providers:[
     ParentOptions
   ]
 })
-export class ParentHomePageModule {}
+export class ParentHomeModule {}

@@ -13,6 +13,7 @@ export class StudentAdd {
   constructor(public navCtrl: NavController, public options: StudentOptions) {
   }
 
+  @ViewChild('id') id: ElementRef
   @ViewChild('username') username: ElementRef
   @ViewChild('password') password: ElementRef
   @ViewChild('name') name: ElementRef
@@ -31,9 +32,10 @@ export class StudentAdd {
     "birth_place": "",
     "birth_date": "",
     "cf": "",
-    "gender": ""
+    "gender": "",
+    "id":""
   }
-
+/*
   classi = []
 
   ionViewDidLoad(){
@@ -44,7 +46,7 @@ export class StudentAdd {
      })
    })
   }
-
+*/
   formIsCorrect() {
     let birth_date: string = this.birth_date.nativeElement.value
     let arrayDate = birth_date.split("/")
@@ -65,6 +67,9 @@ export class StudentAdd {
     else if (arrayDate[0] > today.getDate().toString()) {
       return { correct: false, message: "Lo studente viene dal futuro?" }
     }
+    else if (this.id.nativeElement.value.length < 5) {
+      return { correct: false, message: "L'id deve essere di minimo 5 cifre" }
+    }
     else {
       return { correct: true, message: "" }
     }
@@ -79,6 +84,7 @@ export class StudentAdd {
     if (form.correct) {
 
       console.log(this.username)
+      this.data.id = this.id.nativeElement.value;
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
       this.data.name = this.name.nativeElement.value;
@@ -100,6 +106,7 @@ export class StudentAdd {
             this.birth_place.nativeElement.value = null
             this.cf.nativeElement.value = null
             this.gender.nativeElement.value = null
+            this.id.nativeElement.value = null
           }
         },
           error => {

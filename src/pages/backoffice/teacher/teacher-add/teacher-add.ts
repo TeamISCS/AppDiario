@@ -12,6 +12,7 @@ export class TeacherAdd {
 
   constructor(public navCtrl: NavController, public options: TeacherOptions) {
   }
+  @ViewChild('id') id: ElementRef
   @ViewChild('username') username: ElementRef
   @ViewChild('password') password: ElementRef
   @ViewChild('name') name: ElementRef
@@ -30,7 +31,8 @@ export class TeacherAdd {
     "birth_place": "",
     "birth_date": "",
     "cf": "",
-    "gender": ""
+    "gender": "",
+    "id": "",
   }
 
 
@@ -54,6 +56,9 @@ export class TeacherAdd {
     else if (arrayDate[0] > today.getDate().toString()) {
       return { correct: false, message: "Il professore viene dal futuro?" }
     }
+    else if (this.id.nativeElement.value.length < 5) {
+      return { correct: false, message: "L'id deve essere di minimo 5 cifre" }
+    }
     else {
       return { correct: true, message: "" }
     }
@@ -67,6 +72,7 @@ export class TeacherAdd {
     let form = this.formIsCorrect()
     if (form.correct) {
 
+      this.data.id = this.id.nativeElement.value;
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
       this.data.name = this.name.nativeElement.value;
@@ -88,6 +94,7 @@ export class TeacherAdd {
             this.birth_place.nativeElement.value = null
             this.cf.nativeElement.value = null
             this.gender.nativeElement.value = null
+            this.id.nativeElement.value = null
           }
         },
           error => {

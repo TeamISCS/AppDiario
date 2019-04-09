@@ -1,4 +1,4 @@
-import { HomePage } from './../home/home';
+import { Home } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -10,7 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 
-export class TaskPage {
+export class Task {
 
   @ViewChild('descrizione') desc: HTMLTextAreaElement
 
@@ -39,7 +39,7 @@ export class TaskPage {
 
 
   tornaindietro(){
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(Home);
   }
 
 

@@ -1,23 +1,16 @@
 
-import { HomePage } from './../home/home';
+import { Home } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SearchPage } from '../search/search';
-import { Api } from '../../providers/api/api';
-
-/**
- * Generated class for the UserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController } from 'ionic-angular';
+import { Search } from '../search/search';
+import { Api } from './../../providers/api/api';
 
 @IonicPage()
 @Component({
   selector: 'page-user',
   templateUrl: 'user.html',
 })
-export class UserPage {
+export class User {
 
   constructor(public navCtrl: NavController, public api: Api) {
   }
@@ -48,14 +41,14 @@ export class UserPage {
   }
 
   calendarClick(){
-    this.navCtrl.setRoot(HomePage)
+    this.navCtrl.setRoot(Home)
   }
 
   personClick(){
-    this.navCtrl.setRoot(UserPage)
+    this.navCtrl.setRoot(User)
   }
 
   searchClick(){
-    this.navCtrl.setRoot(SearchPage)
+    this.navCtrl.setRoot(Search)
   }
 }

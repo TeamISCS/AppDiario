@@ -1,6 +1,6 @@
 import { Api } from './../../providers/api/api';
 import { BackofficeMenu } from './../backoffice/backoffice-menu/backoffice-menu';
-import { HomePage } from './../home/home';
+import { Home } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -8,7 +8,7 @@ import { NavController } from 'ionic-angular';
   selector: 'page-home', templateUrl: 'login.html',
 })
 
-export class LoginPage {
+export class Login {
 
   @ViewChild('user') user: HTMLInputElement
   @ViewChild('pass') pass: HTMLInputElement
@@ -40,7 +40,7 @@ export class LoginPage {
             this.navCtrl.setRoot(BackofficeMenu)
           }
           else {
-            this.navCtrl.setRoot(HomePage)
+            this.navCtrl.setRoot(Home)
           }
         }
       }
@@ -58,7 +58,7 @@ export class LoginPage {
         this.navCtrl.setRoot(BackofficeMenu)
       }
       else {
-        this.navCtrl.setRoot(HomePage)
+        this.navCtrl.setRoot(Home)
       }
     }
   }

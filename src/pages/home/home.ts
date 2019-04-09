@@ -1,10 +1,10 @@
 import { Api } from './../../providers/api/api';
-import { SettingTaskPage } from '../setting-task/setting-task';
+import { SettingTask } from '../setting-task/setting-task';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-import { UserPage } from '../user/user';
-import { SearchPage } from '../search/search';
+import { Login } from '../login/login';
+import { User } from '../user/user';
+import { Search } from '../search/search';
 
 
 
@@ -13,7 +13,7 @@ import { SearchPage } from '../search/search';
   selector: 'page-diary',
   templateUrl: 'home.html',
 })
-export class HomePage {
+export class Home {
 
   constructor(public navCtrl: NavController, public api: Api) {
   }
@@ -73,7 +73,7 @@ export class HomePage {
       }
     }
     else {
-      this.navCtrl.setRoot(LoginPage)
+      this.navCtrl.setRoot(Login)
     }
   }
 
@@ -88,19 +88,19 @@ export class HomePage {
     sessionStorage.removeItem("classroom")
     sessionStorage.removeItem("CF")
     sessionStorage.removeItem("gender")
-    this.navCtrl.setRoot(LoginPage)
+    this.navCtrl.setRoot(Login)
   }
 
   calendarClick(){
-    this.navCtrl.setRoot(HomePage)
+    this.navCtrl.setRoot(Home)
   }
 
   personClick(){
-    this.navCtrl.setRoot(UserPage)
+    this.navCtrl.setRoot(User)
   }
 
   searchClick(){
-    this.navCtrl.setRoot(SearchPage)
+    this.navCtrl.setRoot(Search)
   }
 
 monthsy = [8, 9, 10, 11, 0, 1, 2, 3, 4, 5]
@@ -112,7 +112,7 @@ createCalendar(month) {
 
 setTask = element => {
   let date = element.path[0].attributes.date.value
-  this.navCtrl.push(SettingTaskPage, {'date': date})
+  this.navCtrl.push(SettingTask, {'date': date})
 }
 //DA FARE NEL CALENDAR.TS
 calendars(data){

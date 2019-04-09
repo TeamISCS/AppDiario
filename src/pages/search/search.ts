@@ -1,5 +1,5 @@
-import { UserPage } from './../user/user';
-import { HomePage } from './../home/home';
+import { User } from './../user/user';
+import { Home } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -9,7 +9,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-search',
   templateUrl: 'search.html',
 })
-export class SearchPage {
+export class Search {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -18,14 +18,14 @@ export class SearchPage {
     console.log('ionViewDidLoad SearchPage');
   }
   calendarClick(){
-    this.navCtrl.setRoot(HomePage)
+    this.navCtrl.setRoot(Home)
   }
 
   personClick(){
-    this.navCtrl.setRoot(UserPage)
+    this.navCtrl.setRoot(User)
   }
 
   searchClick(){
-    this.navCtrl.setRoot(SearchPage)
+    this.navCtrl.setRoot(Search)
   }
 }

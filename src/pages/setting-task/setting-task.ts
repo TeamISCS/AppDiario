@@ -1,5 +1,5 @@
 import { Api } from './../../providers/api/api';
-import { HomePage } from './../home/home';
+import { Home } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-setting-task',
   templateUrl: 'setting-task.html',
 })
-export class SettingTaskPage {
+export class SettingTask {
 
   @ViewChild('select') select: HTMLSelectElement
   @ViewChild('title') titolo: HTMLInputElement
@@ -55,6 +55,6 @@ export class SettingTaskPage {
   }
 
   tornahome(): void {
-    this.navCtrl.setRoot(HomePage)
+    this.navCtrl.setRoot(Home)
   }
 }

@@ -1,29 +1,29 @@
 import { BackofficeMenuModule } from './../pages/backoffice/backoffice-menu/backoffice-menu.module';
 import { Api } from './../providers/api/api';
-import { TaskPage } from './../pages/task/task';
-import { UserPage } from './../pages/user/user';
-import { LoginPage } from './../pages/login/login';
+import { Task } from './../pages/task/task';
+import { User } from './../pages/user/user';
+import { Login } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { Home } from '../pages/home/home';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchPage } from '../pages/search/search';
-import { SettingTaskPage } from '../pages/setting-task/setting-task';
+import { Search } from '../pages/search/search';
+import { SettingTask } from '../pages/setting-task/setting-task';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    LoginPage,
-    UserPage,
-    TaskPage,
-    SearchPage,
-    SettingTaskPage
+    Home,
+    Login,
+    User,
+    Task,
+    Search,
+    SettingTask
   ],
   imports: [
     BrowserModule,
@@ -34,12 +34,12 @@ import { SettingTaskPage } from '../pages/setting-task/setting-task';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    LoginPage,
-    UserPage,
-    TaskPage,
-    SearchPage,
-    SettingTaskPage
+    Home,
+    Login,
+    User,
+    Task,
+    Search,
+    SettingTask
   ],
   providers: [
     StatusBar,

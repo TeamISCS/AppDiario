@@ -1,5 +1,6 @@
+import { ParentHomePage } from './../parent-home/parent-home';
 import { ParentOptions } from './../parent-options';
-import { ViewChild, Component } from '@angular/core';
+import { ViewChild, Component, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 
@@ -11,55 +12,67 @@ export class ParentAdd {
 
   constructor(public navCtrl: NavController, public options: ParentOptions) {
   }
-  @ViewChild('username') user: HTMLInputElement
-  @ViewChild('password') pass: HTMLInputElement
-  @ViewChild('nome') nome: HTMLInputElement
-  @ViewChild('cognome') cognome: HTMLInputElement
-  @ViewChild('gender') gender: HTMLSelectElement
-
+  @ViewChild('id') id: ElementRef
+  @ViewChild('username') username: ElementRef
+  @ViewChild('password') password: ElementRef
+  @ViewChild('name') name: ElementRef
+  @ViewChild('surname') surname: ElementRef
+  @ViewChild('status') status: ElementRef
   data = {
     "username": "",
     "password": "",
     "name": "",
     "surname": "",
-    "gender":"",
-    "privilege":"3"
+    "privilege":"3",
+    "id":""
+  }
+
+  formIsCorrect() {
+    if (!this.name.nativeElement.value || !this.username.nativeElement.value || !this.password.nativeElement.value || !this.surname.nativeElement.value ) {
+      return { correct: false, message: "C'è un campo vuoto" }
+    }else if (this.id.nativeElement.value.length < 5) {
+      return { correct: false, message: "L'id deve essere di minimo 5 cifre" }
+    }
+    else {
+      return { correct: true, message: "" }
+    }
+
   }
 
   register() {
-    console.log(this.cognome.value)
-
-    if( !this.nome.value ||!this.user.value ||!this.pass.value  ||!this.cognome.value   ||!this.gender.value ){
-      document.getElementById("gg").style.display = "block"
-      document.getElementById("gg").innerHTML = "C'è un campo vuoto"
+    console.log(this.status)
+    let form = this.formIsCorrect()
+    if (form.correct) {
+      this.data.id = this.id.nativeElement.value;
+      this.data.username = this.username.nativeElement.value;
+      this.data.password = this.password.nativeElement.value;
+      this.data.name = this.name.nativeElement.value;
+      this.data.surname = this.surname.nativeElement.value;
+      this.options.add(this.data)
+      .subscribe(data => {
+        console.log(data)
+        if (data['status'] == 'added') {
+          this.status.nativeElement.attributes.class.value += " correct"
+          this.status.nativeElement.innerHTML = "L'utente è stato aggiunto con successo"
+          this.username.nativeElement.value = null
+          this.password.nativeElement.value = null
+          this.name.nativeElement.value = null
+          this.surname.nativeElement.value = null
+            this.id.nativeElement.value = null
+          }
+        },
+          error => {
+            console.log("errore")
+          })
     }
-    else{
-
-    document.getElementById("gg").style.display = "none"
-    this.data.username=this.user.value;
-    this.data.password=this.pass.value;
-    this.data.name=this.nome.value;
-    this.data.surname=this.cognome.value;
-    this.data.gender=this.gender.value;
-    this.options.add(this.data)
-    .subscribe(data => {
-      console.log(data)
-      if(data['status']=='added'){
-        document.getElementById("gg").style.display = "block"
-        document.getElementById("gg").style.color = "black"
-        document.getElementById("gg").innerHTML = "L'utente è stato aggiunto con successo"
-        this.user.value = null
-        this.pass.value = null
-        this.nome.value = null
-        this.cognome.value = null
-        this.gender.value = null
-      }
-    },
-    error => {
-      console.log("errore")
-    })
-  }
+    else {
+      this.status.nativeElement.attributes.class.value += " error"
+      this.status.nativeElement.innerHTML = form.message
+    }
   }
 
 
+goHome() {
+  this.navCtrl.setRoot(ParentHomePage)
+}
 }

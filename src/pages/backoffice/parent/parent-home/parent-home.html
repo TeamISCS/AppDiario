@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <div class="back" (click)="goBackoffice()">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </div>
+      <div class="title">Genitore</div>
+      <div class="empty"></div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div>
+    <div class="divlist" *ngFor="let page of parentPages">
+      <div class="divitem" (click)="goTo(page.where)">
+        <div class="divicon">
+          <ion-icon name="{{page.icon}}"></ion-icon>
+        </div>
+        <div class="divtitle">
+          <ion-item>{{page.title}}</ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

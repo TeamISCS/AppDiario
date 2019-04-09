@@ -1,3 +1,4 @@
+import { ParentHomePage } from './../parent/parent-home/parent-home';
 import { BackofficeHome } from './../backoffice-user/backoffice-home/backoffice-home';
 import { MatterHomePage } from './../matter/matter-home/matter-home';
 import { TeacherHomePage } from '../teacher/teacher-home/teacher-home';
@@ -31,7 +32,7 @@ goToTeacher() {
 }
 
 goToParent() {
-  //this.navCtrl.setRoot(ParentHome)
+  this.navCtrl.setRoot(ParentHomePage)
 }
 
 goToMatter() {

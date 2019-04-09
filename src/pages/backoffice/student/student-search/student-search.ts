@@ -30,7 +30,7 @@ export class StudentSearch {
 
   searchStudent() {
 
-    this.studentList.forEach(() => {
+  /*  this.studentList.forEach(() => {
       this.studentList.pop()
     })
     this.options.search(this.input.value, this.by.value)
@@ -43,6 +43,6 @@ export class StudentSearch {
         });
 
       }
-    })
+    })*/
   }
 }

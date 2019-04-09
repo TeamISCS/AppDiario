@@ -1,3 +1,4 @@
+import { ParentHomePageModule } from './../parent/parent-home/parent-home.module';
 import { BackofficeOptions } from './../backoffice-user/backoffice-options';
 import { TeacherHomePageModule } from './../teacher/teacher-home/teacher-home.module';
 import { MatterHomePageModule } from './../matter/matter-home/matter-home.module';
@@ -20,7 +21,8 @@ import { NgModule } from '@angular/core';
     ClassroomHomeModule,
     StudentHomeModule,
     MatterHomePageModule,
-    TeacherHomePageModule
+    TeacherHomePageModule,
+    ParentHomePageModule
   ],
   entryComponents: [
     BackofficeMenu

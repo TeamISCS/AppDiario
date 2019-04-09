@@ -24,13 +24,15 @@ export class BackofficeAdd {
     console.log('ionViewDidLoad BackofficeAddPage');
   }
 
+  @ViewChild('id') id: ElementRef
   @ViewChild('username') username: ElementRef
   @ViewChild('password') password: ElementRef
   @ViewChild('status') status: ElementRef
 
   data = {
     "username": "",
-    "password": ""
+    "password": "",
+    "id":""
   }
 
 
@@ -39,6 +41,8 @@ export class BackofficeAdd {
 
     if (!this.username.nativeElement.value || !this.password.nativeElement.value ) {
       return { correct: false, message: "C'è un campo vuoto" }
+    }else if (this.id.nativeElement.value.length < 5) {
+      return { correct: false, message: "L'id deve essere di minimo 5 cifre" }
     }
     else {
       return { correct: true, message: "" }
@@ -64,6 +68,7 @@ export class BackofficeAdd {
             this.status.nativeElement.innerHTML = "L'utente è stato aggiunto con successo"
             this.username.nativeElement.value = null
             this.password.nativeElement.value = null
+            this.id.nativeElement.value = null
           }
         },
           error => {

@@ -1,8 +1,9 @@
-import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
+
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchPage } from '../search/search';
+import { Api } from '../../providers/api/api';
 
 /**
  * Generated class for the UserPage page.
@@ -18,7 +19,7 @@ import { SearchPage } from '../search/search';
 })
 export class UserPage {
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
+  constructor(public navCtrl: NavController, public api: Api) {
   }
 
   ionViewDidLoad() {

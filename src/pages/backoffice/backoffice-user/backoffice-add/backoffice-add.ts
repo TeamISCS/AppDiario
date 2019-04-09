@@ -64,7 +64,7 @@ export class BackofficeAdd {
           }
         },
           error => {
-            console.log("errore")
+            console.log(error)
           })
     }
     else {

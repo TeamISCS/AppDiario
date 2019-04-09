@@ -1,7 +1,6 @@
 import { Api } from './../../providers/api/api';
 import { BackofficeMenu } from './../backoffice/backoffice-menu/backoffice-menu';
 import { HomePage } from './../home/home';
-import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 

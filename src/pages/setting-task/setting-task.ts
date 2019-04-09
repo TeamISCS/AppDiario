@@ -1,7 +1,7 @@
+import { Api } from './../../providers/api/api';
 import { HomePage } from './../home/home';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DiarioApiProvider } from '../../providers/diario-api/diario-api';
 
 @IonicPage()
 @Component({
@@ -26,7 +26,7 @@ export class SettingTaskPage {
 
   materie = []
 
-  constructor(public navParams: NavParams, public navCtrl: NavController, public api: DiarioApiProvider) {
+  constructor(public navParams: NavParams, public navCtrl: NavController, public api: Api) {
   }
 
   ionViewWillEnter(){

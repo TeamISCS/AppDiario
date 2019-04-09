@@ -1,11 +1,11 @@
+import { Api } from './../../providers/api/api';
 import { SettingTaskPage } from '../setting-task/setting-task';
-import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { UserPage } from '../user/user';
 import { SearchPage } from '../search/search';
-import { isNull } from 'util';
+
 
 
 @IonicPage()
@@ -15,7 +15,7 @@ import { isNull } from 'util';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) {
+  constructor(public navCtrl: NavController, public api: Api) {
   }
 
   @ViewChild("myslide") slides: Slides

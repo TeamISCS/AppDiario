@@ -33,7 +33,7 @@ export class StudentAdd {
     "birth_date": "",
     "cf": "",
     "gender": "",
-    "id":""
+    "id_student":""
   }
 /*
   classi = []
@@ -84,7 +84,7 @@ export class StudentAdd {
     if (form.correct) {
 
       console.log(this.username)
-      this.data.id = this.id.nativeElement.value;
+      this.data.id_student = this.id.nativeElement.value;
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
       this.data.name = this.name.nativeElement.value;

@@ -1,5 +1,5 @@
+
 import { BackofficeHome } from './../backoffice-home/backoffice-home';
-import { StudentHome } from './../../student/student-home/student-home';
 import { BackofficeOptions } from './../backoffice-options';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -14,9 +14,6 @@ export class BackofficeAdd {
   constructor(public navCtrl: NavController, public options: BackofficeOptions) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BackofficeAddPage');
-  }
 
   @ViewChild('id') id: ElementRef
   @ViewChild('username') username: ElementRef
@@ -26,7 +23,7 @@ export class BackofficeAdd {
   data = {
     "username": "",
     "password": "",
-    "idBackoffice":""
+    "id_backoffice": ""
   }
 
 
@@ -54,7 +51,7 @@ export class BackofficeAdd {
       console.log(this.username)
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
-      this.data.idBackoffice = this.id.nativeElement.value;
+      this.data.id_backoffice = this.id.nativeElement.value;
       this.options.add(this.data)
         .subscribe(data => {
           console.log(data)
@@ -75,13 +72,8 @@ export class BackofficeAdd {
       this.status.nativeElement.innerHTML = form.message
     }
 
-
-
   }
-
-goHome() {
-  this.navCtrl.setRoot(BackofficeHome)
-}
-
-
+  goHome() {
+    this.navCtrl.setRoot(BackofficeHome)
+  }
 }

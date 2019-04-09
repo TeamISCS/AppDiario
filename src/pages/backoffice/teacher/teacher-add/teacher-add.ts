@@ -28,11 +28,11 @@ export class TeacherAdd {
     "password": "",
     "name": "",
     "surname": "",
-    "birth_place": "",
-    "birth_date": "",
+    "birthPlace": "",
+    "birthDate": "",
     "cf": "",
     "gender": "",
-    "id_teacher": "",
+    "idTeacher": "",
   }
 
 
@@ -72,13 +72,13 @@ export class TeacherAdd {
     let form = this.formIsCorrect()
     if (form.correct) {
 
-      this.data.id_teacher = this.id.nativeElement.value;
+      this.data.idTeacher = this.id.nativeElement.value;
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
       this.data.name = this.name.nativeElement.value;
       this.data.surname = this.surname.nativeElement.value;
-      this.data.birth_date = this.birth_date.nativeElement.value;
-      this.data.birth_place = this.birth_place.nativeElement.value;
+      this.data.birthDate = this.birth_date.nativeElement.value;
+      this.data.birthPlace = this.birth_place.nativeElement.value;
       this.data.cf = this.cf.nativeElement.value;
       this.data.gender = this.gender.nativeElement.value[0];
       this.options.add(this.data)

@@ -23,7 +23,7 @@ export class ParentAdd {
     "password": "",
     "name": "",
     "surname": "",
-    "id_parent":""
+    "idParent":""
   }
 
   formIsCorrect() {
@@ -42,7 +42,7 @@ export class ParentAdd {
     console.log(this.status)
     let form = this.formIsCorrect()
     if (form.correct) {
-      this.data.id_parent = this.id.nativeElement.value;
+      this.data.idParent = this.id.nativeElement.value;
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
       this.data.name = this.name.nativeElement.value;

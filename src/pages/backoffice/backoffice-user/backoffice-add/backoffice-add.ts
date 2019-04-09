@@ -23,7 +23,7 @@ export class BackofficeAdd {
   data = {
     "username": "",
     "password": "",
-    "id_backoffice": ""
+    "idBackoffice": ""
   }
 
 
@@ -51,7 +51,7 @@ export class BackofficeAdd {
       console.log(this.username)
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
-      this.data.id_backoffice = this.id.nativeElement.value;
+      this.data.idBackoffice = this.id.nativeElement.value;
       this.options.add(this.data)
         .subscribe(data => {
           console.log(data)

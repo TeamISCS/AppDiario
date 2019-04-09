@@ -4,12 +4,6 @@ import { BackofficeOptions } from './../backoffice-options';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-/**
- * Generated class for the BackofficeAddPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-backoffice-add',
@@ -32,7 +26,7 @@ export class BackofficeAdd {
   data = {
     "username": "",
     "password": "",
-    "id":""
+    "idBackoffice":""
   }
 
 
@@ -60,6 +54,7 @@ export class BackofficeAdd {
       console.log(this.username)
       this.data.username = this.username.nativeElement.value;
       this.data.password = this.password.nativeElement.value;
+      this.data.idBackoffice = this.id.nativeElement.value;
       this.options.add(this.data)
         .subscribe(data => {
           console.log(data)

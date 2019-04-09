@@ -21,7 +21,9 @@ export class Api {
         })
     }
 
-
+    login(data) {
+        return this.http.post(this.urlApp + "/login", data, this.httpOptions)
+    }
     post(pathUrl, data){
         return this.http.post((this.urlApp + pathUrl), data, this.httpOptions)
     }

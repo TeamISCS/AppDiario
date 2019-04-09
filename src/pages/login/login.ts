@@ -1,3 +1,4 @@
+import { Api } from './../../providers/api/api';
 import { BackofficeMenu } from './../backoffice/backoffice-menu/backoffice-menu';
 import { HomePage } from './../home/home';
 import { DiarioApiProvider } from './../../providers/diario-api/diario-api';
@@ -15,27 +16,27 @@ export class LoginPage {
 
   data = { "username": "", "password": "" }
 
-  constructor(public navCtrl: NavController, public api: DiarioApiProvider) { }
+  constructor(public navCtrl: NavController, public api: Api) { }
 
   controlla(): void {
     this.data.username = this.user.value
     this.data.password = this.pass.value
-    this.api.post('/login', this.data)
+    this.api.login(this.data)
     .subscribe(data => {
-      if(data["status"] == "incorrect"){
-        document.getElementById("error").style.display = "block";
-        document.getElementById("error").innerHTML = "Credenziali sbagliate"
-      }
-      else if(data["status"] == "inexistent"){
+      if(data["status"] == "409") {
         document.getElementById("error").style.display = "block";
         document.getElementById("error").innerHTML = "Username inesistente"
       }
-      else {
+      else if(data["status"] == "400"){
+        document.getElementById("error").style.display = "block";
+        document.getElementById("error").innerHTML = "Credenziali sbagliate"
+      }
+      else if(data["status"] == "200") {
         console.log(data)
-        if(data["username"]) {
+        if(data["message"].username) {
           sessionStorage.setItem("logged", "true");
-          sessionStorage.setItem("username", data["username"])
-          sessionStorage.setItem("privilege", data["privilege"])
+          sessionStorage.setItem("username", data["message"].username)
+          sessionStorage.setItem("privilege", data["message"].privilege)
           if(sessionStorage.getItem("privilege") == "4") {
             this.navCtrl.setRoot(BackofficeMenu)
           }
@@ -46,7 +47,7 @@ export class LoginPage {
       }
     },
     error => {
-      console.log("error")
+      console.log(error)
       document.getElementById("error").style.display = "block";
       document.getElementById("error").innerHTML = "Errore di connessione"
     })
